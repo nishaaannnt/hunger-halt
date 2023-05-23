@@ -1,0 +1,14 @@
+import deliver from './home/deliver.png';
+import vector1 from './home/vector1.jpg';
+import donate from './home/donate.jpg';
+import edibleFood from './home/edibleFood.jpg';
+import money from './home/money.jpg';
+import rawFood from './home/rawFood.jpg';
+import happy from './home/happy.jpg'
+import ngo from './home/ngo.jpg'
+import zeroHunger from './home/zeroHunger.jpg'
+import goodHealth from './home/goodHealth.jpg'
+import volunteer from './home/volunteer.jpg'
+
+
+export { deliver,vector1,rawFood,edibleFood,donate,money,zeroHunger,goodHealth,happy,ngo,volunteer };

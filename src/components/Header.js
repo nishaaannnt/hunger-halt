@@ -12,7 +12,7 @@ const Header = () => {
                     <li><Link to="/volunteer" className="hover:text-black">Volunteer</Link></li>
                     <li><Link to="/provide" className="hover:text-black">Provide</Link></li>
                     <li><Link to="#" className="hover:text-black">About</Link></li>
-                    <li><Link to="#" className="bg-hung text-white p-2 px-3 rounded-lg hover:bg-emerald-700">Login</Link></li>
+                    <li><Link to="/login" className="bg-hung text-white p-2 px-3 rounded-lg hover:bg-emerald-700">Login</Link></li>
                     <li>
                         <Link to="#" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Donate Us</Link>
                     </li>

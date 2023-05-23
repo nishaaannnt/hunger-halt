@@ -9,6 +9,8 @@ import ngo from './home/ngo.jpg'
 import zeroHunger from './home/zeroHunger.jpg'
 import goodHealth from './home/goodHealth.jpg'
 import volunteer from './home/volunteer.jpg'
+import google from './login/google.png'
+import email from './login/email.png'
 
 
-export { deliver,vector1,rawFood,edibleFood,donate,money,zeroHunger,goodHealth,happy,ngo,volunteer };
+export { deliver,vector1,rawFood,edibleFood,donate,money,zeroHunger,goodHealth,happy,ngo,volunteer,google,email };

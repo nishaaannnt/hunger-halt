@@ -15,10 +15,7 @@ export const Home = () => {
                     Welcome to Hunger Halt!
                 </h1>
                 <p className="mr-6 text-lg mb-8">
-                    Around one-third of food produced for human consumption is wasted
-                    annually, while an estimated 690 million people suffer from hunger
-                    daily. These problems are interlinked and require a comprehensive
-                    approach.
+                Fight food waste and hunger with us. Connect with NGOs and retreat centers, ensuring reliable food sources for those in need. Join our mission to reduce waste, feed the hungry, and raise awareness for a brighter, more sustainable future.
                 </p>
                 <a href="#" className="bg-hung text-white px-6 py-2 rounded-lg hover:bg-emerald-700 mt-4">Donate
                     Us</a>

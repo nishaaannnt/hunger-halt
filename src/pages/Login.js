@@ -1,15 +1,17 @@
 import React from 'react'
+import { useContext } from 'react'
 import { email, google } from '../assets/images'
-import { googleProvider,auth} from '../firebase/firebase'
-import {useContext} from 'react'
-import {signInWithPopup ,signOut} from 'firebase/auth'
+import { googleProvider,auth } from '../firebase/firebase'
+import {signInWithPopup ,signOut, onAuthStateChanged} from 'firebase/auth'
 import { Appstate } from '../App'
+import { useNavigate } from 'react-router-dom'
 
 
-export const Login = () => {
+export const Login = () => {  
+  const navigate= useNavigate();
+  const useAppstate=useContext(Appstate); 
 
-  const useAppstate=useContext(Appstate);
-
+  // Signin with google
   const googleLogin=async ()=>{
     try{
       await signInWithPopup(auth,googleProvider)
@@ -18,12 +20,15 @@ export const Login = () => {
         useAppstate.setuserName(result.user.displayName);
         useAppstate.setLogin(true);
         useAppstate.setPhoto(result.user.photoURL);
+        navigate("/");
+
       })
     }catch(err){
       console.log(err);
     }
   }
 
+  // Logout Functionality
   const logOut =async()=>{
     try{
     await signOut(auth)
@@ -35,6 +40,10 @@ export const Login = () => {
     }
 }
 
+  
+  
+
+// Login UI 
   return (
     <div className='flex flex-col gap-8 justify-center items-center w-full h-full py-20'>
       {useAppstate.login?
@@ -50,7 +59,6 @@ export const Login = () => {
             <p>Sign in with Email</p>
         </div></> 
 }
-        
     </div>
   )
 }

@@ -11,6 +11,7 @@ import goodHealth from './home/goodHealth.jpg'
 import volunteer from './home/volunteer.jpg'
 import google from './login/google.png'
 import email from './login/email.png'
+import loginVector from './login/loginVector.jpg'
 
 
-export { deliver,vector1,rawFood,edibleFood,donate,money,zeroHunger,goodHealth,happy,ngo,volunteer,google,email };
+export { deliver,vector1,rawFood,edibleFood,donate,money,zeroHunger,goodHealth,happy,ngo,volunteer,google,email,loginVector };

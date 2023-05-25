@@ -5,7 +5,6 @@ import { Appstate } from '../App'
 const Header = () => {
     const useAppstate=useContext(Appstate);
   return (
-    
     <header className="sticky top-0 z-50 bg-white/90 drop-shadow-md">
             <nav className="flex p-6 mx-auto justify-between text-hung font text-xl items-center">
                 <h3>Hunger Halt</h3>

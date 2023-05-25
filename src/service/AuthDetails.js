@@ -1,6 +1,5 @@
 import React,{useContext,useEffect} from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
-import { Auth } from 'firebase/auth'
 import { auth } from '../firebase/firebase'
 import { Appstate } from '../App'
 
@@ -16,6 +15,7 @@ const useAppstate=useContext(Appstate);
       useAppstate.setuserName(auth.currentUser.displayName);
       useAppstate.setLogin(true);
       useAppstate.setPhoto(auth.currentUser.photoURL)
+      console.log(auth.currentUser.photoURL)
       }else{
         useAppstate.setuserName('');
       useAppstate.setLogin(false);

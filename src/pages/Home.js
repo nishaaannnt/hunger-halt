@@ -27,10 +27,10 @@ export const Home = () => {
 
         {/* // Cards for Donation // */}
 
-        <div className="donate flex justify-between w-4/5 my-12 text-white text-xl">
-            <Card title='Donate Money' img={money}/>
-            <Card title='Donate Raw Food' img={rawFood}/>
+        <div className="donate flex justify-between w-4/5 my-12 text-white text-xl" id='donate'> 
             <Card title='Donate Edible Food' img={edibleFood}/>
+            <Card title='Donate Raw Food' img={rawFood}/>
+            <Card title='Sponsor Us' img={money}/>
         </div>
     </div>
     <Homebanner/>

@@ -11,14 +11,14 @@ const Header = () => {
                 <ul className="flex space-x-6 items-center">
                     <li><Link to="/" className="hover:text-black">Home</Link></li>
                     <li><Link to="/volunteer" className="hover:text-black">Volunteer</Link></li>
-                    <li><Link to="/provide" className="hover:text-black">Provide</Link></li>
+                    <li><Link to="/donate" className="hover:text-black">Donate</Link></li>
                     <li><Link to="#" className="hover:text-black">About</Link></li>
 
                     {/* // Conditional rendering if logged in or not // */}
 
                     {useAppstate.login ?
                     <>
-                        <li><Link to="#" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Donate Us</Link></li>
+                        <li><Link to="#" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Sponsor Us</Link></li>
                         <div className='flex gap-3 bg-black/40 text-white rounded-lg px-2 items-center'>
                             <li><p className='py-2'>{useAppstate.userName}</p></li>
                             <li><img src={useAppstate.photo} alt="pfp" className='w-8 rounded-full' /></li>

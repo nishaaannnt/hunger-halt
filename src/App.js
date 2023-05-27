@@ -6,6 +6,7 @@ import { Routes, Route  } from "react-router-dom";
 import { Login } from "./pages/Login";
 import  Volunteer  from "./pages/Volunteer";
 import AuthDetails from './service/AuthDetails'
+import Donate from "./pages/Donate";
 
 
 // This is secondary important
@@ -31,7 +32,7 @@ function App() {
           exact path="/" element={<> <Home /></>}
         />
         <Route path="/volunteer" element={<Volunteer/>} />
-        <Route path="/donation" element={<></>} />
+        <Route path="/donate" element={<Donate/>} />
         <Route path="/login" element={<Login/>} />
       </Routes>
       <AuthDetails/>

@@ -1,9 +1,9 @@
 import React from 'react'
 import { useContext,useState } from 'react'
-import { email, google, loginVector } from '../assets/images'
-import { googleProvider,auth } from '../firebase/firebase'
+import { email, google, loginVector } from '../../assets/images'
+import { googleProvider,auth } from '../../firebase/firebase'
 import {signInWithPopup ,signOut,createUserWithEmailAndPassword} from 'firebase/auth'
-import { Appstate } from '../App'
+import { Appstate } from '../../App'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -25,7 +25,7 @@ export const Login = () => {
         useAppstate.setuserName(result.user.displayName);
         useAppstate.setLogin(true);
         useAppstate.setPhoto(result.user.photoURL);
-        navigate("/");
+        navigate("/register");
       })
     }catch(err){
       console.log(err);
@@ -50,7 +50,7 @@ export const Login = () => {
         useAppstate.setuserName(result.user.displayName);
         useAppstate.setLogin(true);
         useAppstate.setPhoto(result.user.photoURL);
-        navigate("/");
+        navigate("/register");
       })
     }catch(err){
       console.log(err);

@@ -1,10 +1,24 @@
-import {React,useContext} from 'react'
+import {React,useContext, useState} from 'react'
 import {Link} from 'react-router-dom'
 import { Appstate } from '../App'
+import Modal from './Modal';
 
 const Header = () => {
     const useAppstate=useContext(Appstate);
+    const [signInModal,setSignInModal]=useState(false);
+    const [signUpModal,setSignUpModal]=useState(false);
+
+
+    // Add this to make modal fixed 
+    const modalOpen=()=>{
+        document.body.style.overflow='hidden'
+    } 
+    const modalClose=()=>{
+        document.body.style.overflow=''
+    }   
+
   return (
+    <>
     <header className="sticky top-0 z-50 bg-white/90 drop-shadow-md">
             <nav className="flex p-6 mx-auto justify-between text-hung font text-xl items-center">
                 <h3>Hunger Halt</h3>
@@ -26,12 +40,43 @@ const Header = () => {
                         <li><Link to="/login" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Log Out</Link></li>
                     </>
                     :
-                    <li><Link to="/login" className="bg-hung text-white p-2 px-3 rounded-lg hover:bg-emerald-700">Login</Link></li>
+                    <>
+                    <li><a onClick={()=>{setSignInModal(true);}} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">Login</a></li>
+                    <li><a onClick={()=>{setSignUpModal(true)}} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">SignUp</a></li>
+                    </>
                     }
                 </ul>
             </nav>
         </header>
-  )
-}
+        {
+            signInModal?(
+                <Modal onClose={setSignInModal}>
+                    <div className='flex flex-col  space-x-6 items-center'>
+                    <h2 className='mb-3 text-2xl text-hung font-bold'>Sign In</h2>
+                    <hr className='drop-shadow-3xl  w-full my-2' />
+                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as Provider</button>
+                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as Volunteer</button>
+                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as NGO</button>
+                    </div>
+                    {}
+                </Modal>
+            ):<></>
+        }{
+            signUpModal?(
+                <Modal onClose={setSignUpModal}>
+                    <div className='flex flex-col  space-x-6 items-center'>
+                    <h2 className='mb-3 text-2xl text-hung font-bold'>Sign Up</h2>
+                    <hr className='drop-shadow-3xl  w-full my-2' />
+                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as Provider</button>
+                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as Volunteer</button>
+                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as NGO</button>
+                    </div>
+                    {}
+                </Modal>
+            ):<></>
+        }
 
+    </>
+  );
+};
 export default Header;

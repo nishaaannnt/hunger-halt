@@ -24,6 +24,7 @@ function App() {
   // App UI 
   // Change the values as per login
   return (
+
     <Appstate.Provider value={{userName,login,setuserName,setLogin,setPhoto,photo}}>
     
       <Header />

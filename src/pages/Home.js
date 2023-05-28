@@ -8,9 +8,9 @@ export const Home = () => {
     <>
     <section id="home">
         {/* // Introduction to website // */}
-    <div className="home-content flex flex-col justify-center px-12 py-12 items-center h-full">
-        <div className="home flex justify-between mt-8 mb-8 h-3/4 w-4/5">
-            <div className="desc w-3/4 px-6">
+    <div className="home-content flex flex-col justify-center md:px-12 py-12 items-center h-full">
+        <div className="home  md:flex md:justify-between mt-8 mb-8 h-3/4 md:w-4/5">
+            <div className="desc  w-auto  md:w-3/4 px-6 md:m-auto mb-8">
                 <h1 className="text-6xl py-3 mb-6 text-hung">
                     Welcome to Hunger Halt!
                 </h1>
@@ -21,13 +21,12 @@ export const Home = () => {
                     Us</a>
             </div>
             <div className="carousel max-h-90 flex justify-center items-center">
-                <img src={vector1} className="h-full" alt="img" />
+                <img src={vector1} className="md:h-full h-96" alt="img" />
             </div>
         </div>
 
         {/* // Cards for Donation // */}
-
-        <div className="donate flex justify-between w-4/5 my-12 text-white text-xl" id='donate'> 
+        <div className="donate md:flex justify-between w-4/5 my-12 text-white text-xl" id='donate'> 
             <Card title='Donate Edible Food' img={edibleFood}/>
             <Card title='Donate Raw Food' img={rawFood}/>
             <Card title='Sponsor Us' img={money}/>

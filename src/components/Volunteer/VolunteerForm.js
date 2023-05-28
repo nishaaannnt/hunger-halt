@@ -22,6 +22,7 @@ const VolunteerForm = () => {
 
             <label for="experience" class="block mb-2">Relevant Experience:</label>
             <textarea id="experience" name="experience" placeholder='Enter Your Experience' required class="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"></textarea><br/>
+            
 
             <input type="submit" value="Submit Application" class="bg-hung hover:bg-hung/60 cursor-pointer text-white font-bold py-2 px-4 rounded-xl mt-4"/>
         </form>

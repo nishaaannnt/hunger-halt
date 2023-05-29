@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { Routes, Route  } from "react-router-dom";
 import { Login } from "./pages/user/UserLogin";
 import UserRegister  from "./pages/user/UserRegister";
+import NgoRegister  from "./pages/ngo/NgoRegister";
 import  Volunteer  from "./pages/Volunteer";
 import AuthDetails from './service/AuthDetails'
 import Donate from "./pages/Donate";
@@ -36,7 +37,8 @@ function App() {
         <Route path="/volunteer" element={<Volunteer/>} />
         <Route path="/donate" element={<Donate/>} />
         <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<UserRegister/>} />
+        <Route path="/user/register" element={<UserRegister/>} />
+        <Route path="/ngo/register" element={<NgoRegister/>} />
       </Routes>
       <AuthDetails/>
       <Footer />

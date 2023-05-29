@@ -1,10 +1,13 @@
 import React, {useState} from 'react'
+import { loginVector } from '../../assets/images';
 
-const RegisterProvider = () => {
+const NgoRegister = () => {
 
   const [fullName, setFullName] = useState('');
+  const [contactPerson, setContactPerson] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [cpassword, setcPassword] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [age, setAge] = useState('');
@@ -15,16 +18,34 @@ const RegisterProvider = () => {
     // Perform registration logic here
   };
 
+    //UI of NGO registration   
+
   return (
-    <div className=''>
+    <div className='w-full flex gap-5 m-auto justify-center my-8'>
+      <div className='w-1/2'>
+          <img src={loginVector} alt="" />
+        </div>
+      <div className='w-1/3'>
     <h2 className="text-3xl  py-3 mb-8 text-hung items-center justify-center">Provider Registration</h2>
-    <form onSubmit={handleFormSubmit} className='mx-auto mt-8 justify-center items-center'>
-      <label htmlFor="fullName" className="block mb-2">Full Name:</label>
+    <form onSubmit={handleFormSubmit} className='mx-auto  mt-8 justify-center items-center'>
+      <label htmlFor="fullName" className="block mb-2">Organization Name:</label>
       <input
         type="text"
         id="fullName"
         value={fullName}
         onChange={(e) => setFullName(e.target.value)}
+        placeholder='Eg. Khush Bharat Pratibha'
+        required
+        className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
+      />
+
+    <label htmlFor="fullName" className="block mb-2">Contact Person Name:</label>
+      <input
+        type="text"
+        id="fullName"
+        value={fullName}
+        onChange={(e) => setContactPerson(e.target.value)}
+        placeholder='Eg. Sundar Pichai'
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       />
@@ -35,6 +56,7 @@ const RegisterProvider = () => {
         id="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        placeholder='Enter Your organization email'
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       />
@@ -45,6 +67,18 @@ const RegisterProvider = () => {
         id="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        placeholder='Enter Your Password'
+        required
+        className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
+      />
+
+    <label htmlFor="cpassword" className="block mb-2">Confirm Password:</label>
+      <input
+        type="cpassword"
+        id="cpassword"
+        value={cpassword}
+        onChange={(e) => setcPassword(e.target.value)}
+        placeholder='Confirm Your Password'
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       />
@@ -55,6 +89,7 @@ const RegisterProvider = () => {
         id="phone"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
+        placeholder='Enter Your '
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       />
@@ -64,6 +99,7 @@ const RegisterProvider = () => {
         id="address"
         value={address}
         onChange={(e) => setAddress(e.target.value)}
+        placeholder='Enter Your '
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       ></textarea>
@@ -74,6 +110,7 @@ const RegisterProvider = () => {
         id="age"
         value={age}
         onChange={(e) => setAge(e.target.value)}
+        placeholder='Enter Your '
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       />
@@ -86,7 +123,8 @@ const RegisterProvider = () => {
       </button>
     </form>
     </div>
+    </div>
   )
 }
 
-export default RegisterProvider
+export default NgoRegister

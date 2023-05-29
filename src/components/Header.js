@@ -5,6 +5,8 @@ import Modal from './Modal';
 
 const Header = () => {
     const useAppstate=useContext(Appstate);
+
+    // For Modal
     const [signInModal,setSignInModal]=useState(false);
     const [signUpModal,setSignUpModal]=useState(false);
 
@@ -20,9 +22,9 @@ const Header = () => {
   return (
     <>
     <header className="sticky top-0 z-50 bg-white/90 drop-shadow-md">
-            <nav className="flex p-6 mx-auto justify-between text-hung font text-xl items-center">
+            <nav className="md:flex  p-6 mx-auto justify-between text-hung font text-xl items-center">
                 <h3>Hunger Halt</h3>
-                <ul className="flex space-x-6 items-center">
+                <ul className="md:flex md:space-x-6 items-center">
                     <li><Link to="/" className="hover:text-black">Home</Link></li>
                     <li><Link to="/volunteer" className="hover:text-black">Volunteer</Link></li>
                     <li><Link to="/donate" className="hover:text-black">Donate</Link></li>
@@ -41,37 +43,39 @@ const Header = () => {
                     </>
                     :
                     <>
-                    <li><a onClick={()=>{setSignInModal(true);}} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">Login</a></li>
-                    <li><a onClick={()=>{setSignUpModal(true)}} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">SignUp</a></li>
+                    {/* Login is same for both NGO and User as only single Dataset of Users */}
+                    
+                    <li><Link to={'/login'} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">Login</Link></li>
+                    <li><a onClick={()=>{setSignUpModal(true);setSignInModal(false)}} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">SignUp</a></li>
                     </>
                     }
                 </ul>
             </nav>
         </header>
-        {
+
+        {/* // MODAL SECTION // */}
+        {/*
             signInModal?(
                 <Modal onClose={setSignInModal}>
-                    <div className='flex flex-col  space-x-6 items-center'>
-                    <h2 className='mb-3 text-2xl text-hung font-bold'>Sign In</h2>
-                    <hr className='drop-shadow-3xl  w-full my-2' />
-                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as Provider</button>
-                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as Volunteer</button>
-                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as NGO</button>
+                    <div className='flex flex-col items-center'>
+                    <h2 className='mb-2 text-2xl text-hung font-bold'>Sign In</h2>
+                    <hr className='drop-shadow-2xl  w-full my-1' />
+                    <Link to="/login" onClick={()=>{setSignInModal(false)}} className="text-center bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-2 w-60" >Continue as User</Link> 
+                    <Link to="/login" onClick={()=>{setSignInModal(false)}} className="text-center bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-2 w-60" >Continue as NGO</Link> 
                     </div>
                     {}
                 </Modal>
-            ):<></>
+            ):<></>*/
         }{
             signUpModal?(
                 <Modal onClose={setSignUpModal}>
-                    <div className='flex flex-col  space-x-6 items-center'>
-                    <h2 className='mb-3 text-2xl text-hung font-bold'>Sign Up</h2>
-                    <hr className='drop-shadow-3xl  w-full my-2' />
-                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as Provider</button>
-                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as Volunteer</button>
-                    <button className="bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-3 w-60" >Continue as NGO</button>
+                    <div className='flex flex-col items-center'>
+                    <h2 className='mb-2 text-2xl text-hung font-bold'>Sign Up</h2>
+                    <hr className='drop-shadow-3xl  w-full my-1' />
+                    <Link to="/user/register" onClick={()=>{setSignUpModal(false)}} className="text-center bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-2 w-60" >Continue as User</Link> 
+                    <Link to="/ngo/register" onClick={()=>{setSignUpModal(false)}} className="text-center bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-2 w-60" >Continue as NGO</Link> 
+                    
                     </div>
-                    {}
                 </Modal>
             ):<></>
         }

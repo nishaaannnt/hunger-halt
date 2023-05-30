@@ -1,15 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState,useContext} from 'react'
+import { Appstate } from '../../App'
 import { loginVector } from '../../assets/images';
+import { useNavigate,Link} from 'react-router-dom'
 
 const UserRegister = () => {
+  const navigate= useNavigate();
+  const useAppstate=useContext(Appstate); 
+  
+    const [fullName, setFullName] = useState(useAppstate.userName);
+    const [email, setEmail] = useState(useAppstate.email);
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
 
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
-  const [age, setAge] = useState('');
-  const [userType, setUserType] = useState('provider'); // Default user type
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -17,12 +19,12 @@ const UserRegister = () => {
   };
 
   return (
-    <div className='w-full flex gap-5 m-auto justify-center my-8'>
+    <div className='w-full flex gap-5 m-auto justify-center my-16'>
       <div className='w-1/2'>
           <img src={loginVector} alt="" />
         </div>
       <div className='w-1/3'>
-    <h2 className="text-3xl  py-3 mb-8 text-hung items-center justify-center">Provider Registration</h2>
+    <h2 className="text-3xl  py-3 mb-8 text-hung items-center justify-center">User Registration</h2>
     <form onSubmit={handleFormSubmit} className='mx-auto  mt-8 justify-center items-center'>
       <label htmlFor="fullName" className="block mb-2">Full Name:</label>
       <input
@@ -41,17 +43,6 @@ const UserRegister = () => {
         id="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder='Enter Your '
-        required
-        className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
-      />
-
-      <label htmlFor="password" className="block mb-2">Password:</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
         placeholder='Enter Your '
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
@@ -77,17 +68,6 @@ const UserRegister = () => {
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       ></textarea>
-
-      <label htmlFor="age" className="block mb-2">Age:</label>
-      <input
-        type="number"
-        id="age"
-        value={age}
-        onChange={(e) => setAge(e.target.value)}
-        placeholder='Enter Your '
-        required
-        className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
-      />
 
       <button
         type="submit"

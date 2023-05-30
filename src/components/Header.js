@@ -7,8 +7,8 @@ const Header = () => {
     const useAppstate=useContext(Appstate);
 
     // For Modal
-    const [signInModal,setSignInModal]=useState(false);
     const [signUpModal,setSignUpModal]=useState(false);
+
 
 
     // Add this to make modal fixed 
@@ -28,7 +28,7 @@ const Header = () => {
                     <li><Link to="/" className="hover:text-black">Home</Link></li>
                     <li><Link to="/volunteer" className="hover:text-black">Volunteer</Link></li>
                     <li><Link to="/donate" className="hover:text-black">Donate</Link></li>
-                    <li><Link to="#" className="hover:text-black">About</Link></li>
+                    <li><Link to="/about" className="hover:text-black">About</Link></li>
 
                     {/* // Conditional rendering if logged in or not // */}
 
@@ -37,6 +37,7 @@ const Header = () => {
                         <li><Link to="#" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Sponsor Us</Link></li>
                         <div className='flex gap-3 bg-black/40 text-white rounded-lg px-2 items-center'>
                             <li><p className='py-2'>{useAppstate.userName}</p></li>
+                            {/* <li><p className='py-2'>{useAppstate.email}</p></li> */}
                             <li><img src={useAppstate.photo} alt="pfp" className='w-8 rounded-full' /></li>
                         </div>
                         <li><Link to="/login" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Log Out</Link></li>
@@ -46,7 +47,7 @@ const Header = () => {
                     {/* Login is same for both NGO and User as only single Dataset of Users */}
                     
                     <li><Link to={'/login'} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">Login</Link></li>
-                    <li><a onClick={()=>{setSignUpModal(true);setSignInModal(false)}} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">SignUp</a></li>
+                    <li><Link to={'/signup'} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">SignUp</Link></li>
                     </>
                     }
                 </ul>
@@ -74,7 +75,6 @@ const Header = () => {
                     <hr className='drop-shadow-3xl  w-full my-1' />
                     <Link to="/user/register" onClick={()=>{setSignUpModal(false)}} className="text-center bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-2 w-60" >Continue as User</Link> 
                     <Link to="/ngo/register" onClick={()=>{setSignUpModal(false)}} className="text-center bg-hung text-white text-xl p-3 rounded-lg hover:bg-emerald-700 my-2 w-60" >Continue as NGO</Link> 
-                    
                     </div>
                 </Modal>
             ):<></>

@@ -26,7 +26,7 @@ const NgoRegister = () => {
           <img src={loginVector} alt="" />
         </div>
       <div className='w-1/3'>
-    <h2 className="text-3xl  py-3 mb-8 text-hung items-center justify-center">Provider Registration</h2>
+    <h2 className="text-3xl  py-3 mb-8 text-hung items-center justify-center">NGO Registration</h2>
     <form onSubmit={handleFormSubmit} className='mx-auto  mt-8 justify-center items-center'>
       <label htmlFor="fullName" className="block mb-2">Organization Name:</label>
       <input
@@ -103,17 +103,6 @@ const NgoRegister = () => {
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       ></textarea>
-
-      <label htmlFor="age" className="block mb-2">Age:</label>
-      <input
-        type="number"
-        id="age"
-        value={age}
-        onChange={(e) => setAge(e.target.value)}
-        placeholder='Enter Your '
-        required
-        className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
-      />
 
       <button
         type="submit"

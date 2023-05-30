@@ -1,9 +1,9 @@
 import React from 'react'
 import { useContext,useState } from 'react'
-import { email, google, loginVector } from '../../assets/images'
-import { googleProvider,auth } from '../../firebase/firebase'
+import { email, google, loginVector } from '../assets/images'
+import { googleProvider,auth } from '../firebase/firebase'
 import {signInWithPopup ,signOut,createUserWithEmailAndPassword} from 'firebase/auth'
-import { Appstate } from '../../App'
+import { Appstate } from '../App'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -14,7 +14,6 @@ export const Login = () => {
 
   const [email,setemail]=useState()
   const [pwd,setpwd]=useState()
-  const [cpwd,setcpwd]=useState()
 
   // Signin with google
   const googleLogin=async ()=>{
@@ -23,9 +22,10 @@ export const Login = () => {
       .then((result)=>{
         console.log(result.user)
         useAppstate.setuserName(result.user.displayName);
+        useAppstate.setEmail(result.user.email);
         useAppstate.setLogin(true);
         useAppstate.setPhoto(result.user.photoURL);
-        navigate("/register");
+        
       })
     }catch(err){
       console.log(err);
@@ -37,7 +37,7 @@ export const Login = () => {
   const signup=document.querySelector('#signup')
  
   const mailLogin=()=>{
-    if(pwd===cpwd){
+    if(pwd){
 
       // Password Matched
       const mail=signup.email.value;
@@ -103,8 +103,7 @@ export const Login = () => {
 
                 <label for="password" className="block mb-3">Password:</label>
                 <input type="password" id="password" name="password" onChange={(e)=>{setpwd(e.target.value)}} placeholder='Enter Your Password' required  className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
-                <label for="cpassword" className="block mb-3">Confirm Password:</label>
-                <input type="password" id="cpassword" name="cpassword" onChange={(e)=>{setcpwd(e.target.value)}} placeholder='Confirm Your password' required className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
+
             </div>
             <div className='pwdNoMatch justify-center items-center flex text-red-700 '></div>
             <div onClick={mailLogin} className='w-1/2 m-auto flex justify-center items-center p-4 rounded-2xl gap-8 bg-hung/80 hover:bg-hung/60 transition cursor-pointer drop-shadow-lg my-2'>

@@ -12,6 +12,7 @@ import Donate from "./pages/Donate";
 import About from "./pages/About"
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
+import UserRequest from "./pages/user/UserRequest";
 
 
 // This is secondary important
@@ -53,6 +54,7 @@ function App() {
         <Route path="/user/register" element={<UserRegister/>} />
         <Route path="/ngo/register" element={<NgoRegister/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/user/request" element={<UserRequest/>} />
         <Route path="/profile" element={<Profile/>} />
       </Routes>
       <AuthDetails/>

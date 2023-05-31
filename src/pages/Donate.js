@@ -27,7 +27,7 @@ const Donate = () => {
 
     <div className="home-content flex justify-center px-12 py-12 items-center h-full">
         <div className="home flex justify-center items-center mt-8 mb-8 h-3/4 w-4/5">
-        <Card title='Donate Edible Food' img={edibleFood}/>
+        <Card title='Donate Edible Food' img={edibleFood} tow={'/user/request'}/>
             <div className="desc w-3/4 px-6 flex jusrofy-center flex-col ml-6">
                 <h1 className="text-6xl  py-3 mb-8 text-hung ">
                 Donate Edible Food
@@ -52,7 +52,7 @@ const Donate = () => {
                 </p>
                 
             </div>
-            <Card title='Donate Raw Food' img={rawFood}/>
+            <Card title='Donate Raw Food' img={rawFood} tow='/user/request'/>
         </div>
     </div>
         

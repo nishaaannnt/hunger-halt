@@ -28,7 +28,7 @@ const Header = () => {
                     <li><Link to="/" className="hover:text-black">Home</Link></li>
                     <li><Link to="/volunteer" className="hover:text-black">Volunteer</Link></li>
                     <li><Link to="/donate" className="hover:text-black">Donate</Link></li>
-                    <li><Link to="/about" className="hover:text-black">About</Link></li>
+                    
 
                     {/* // Conditional rendering if NGO or NOT// */}
 
@@ -36,6 +36,7 @@ const Header = () => {
                     useAppstate.role==='NGO'&&<>
                     <li><Link to="/donate" className="hover:text-black">Available Volunteer</Link></li>
                     <li><Link to="/ngo/food" className="hover:text-black">Food</Link></li></>}
+                    <li><Link to="/about" className="hover:text-black">About</Link></li>
 
                     {useAppstate.login?
                     <>

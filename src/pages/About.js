@@ -10,9 +10,9 @@ const About = () => {
     <body class="p-10">
     <div class="relative ">
         <img src={AboutImage} className='w-full '/>
-        <h1 class="absolute font-bold text-7xl text-white left-1/2 -translate-x-1/2 bottom-5 -translate-y-20 px-3 rounded-md font-brad ">
-            HungerHalt</h1>
-       <p className='absolute  text-3xl text-white left-1/2 -translate-x-1/2 bottom-5 px-3  font-brad '>
+        <h1 class="absolute text-5xl font-pop text-white top-16 left-1/2 -translate-x-1/2 -translate-y-1/3 ">
+            HUNGER HALT</h1>
+       <p className='absolute  text-2xl text-white left-1/2 -translate-x-1/2 bottom-14 px-3  font-brad '>
 "From Hunger to Smiles: Empowering Lives with Food"
 
 

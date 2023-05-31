@@ -28,7 +28,7 @@ const Header = () => {
                     <li><Link to="/" className="hover:text-black">Home</Link></li>
                     <li><Link to="/volunteer" className="hover:text-black">Volunteer</Link></li>
                     <li><Link to="/donate" className="hover:text-black">Donate</Link></li>
-                    <li><Link to="/about" className="hover:text-black">About</Link></li>
+                    
 
                     {/* // Conditional rendering if NGO or NOT// */}
 
@@ -36,11 +36,12 @@ const Header = () => {
                     useAppstate.role==='NGO'&&<>
                     <li><Link to="/donate" className="hover:text-black">Available Volunteer</Link></li>
                     <li><Link to="/ngo/food" className="hover:text-black">Food</Link></li></>}
+                    <li><Link to="/about" className="hover:text-black">About</Link></li>
 
                     {useAppstate.login?
                     <>
                     
-                        <li><Link to="/donate" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Sponsor Us</Link></li>
+                        <li><Link to="/donate/money" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Sponsor Us</Link></li>
                         <div onClick={()=>navigate('/profile')} className='flex cursor-pointer gap-3 hover:bg-black/30 bg-black/40 text-white rounded-lg px-2 items-center'>
                             <li><p className='py-2'>{useAppstate.userName}</p></li>
                             {/* <li><p className='py-2'>{useAppstate.email}</p></li> */}

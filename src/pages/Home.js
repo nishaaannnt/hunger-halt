@@ -27,9 +27,9 @@ export const Home = () => {
 
         {/* // Cards for Donation // */}
         <div className="donate md:flex justify-between w-4/5 my-12 text-white text-xl" id='donate'> 
-            <Card title='Donate Edible Food' img={edibleFood}/>
-            <Card title='Donate Raw Food' img={rawFood}/>
-            <Card title='Sponsor Us' img={money}/>
+            <Card title='Donate Edible Food' img={edibleFood} tow='/user/request'/>
+            <Card title='Donate Raw Food' img={rawFood} tow='/user/request'/>
+            <Card title='Sponsor Us' img={money} tow='/donate/money'/>
         </div>
     </div>
     <Homebanner/>

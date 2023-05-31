@@ -13,6 +13,7 @@ import About from "./pages/About"
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import UserRequest from "./pages/user/UserRequest";
+import { Home2 } from "./pages/Home2";
 
 
 // This is secondary important
@@ -48,6 +49,7 @@ function App() {
           exact path="/" element={<> <Home /></>}
         />
         <Route path="/volunteer" element={<Volunteer/>} />
+        <Route path="/home2" element={<Home2/>} />
         <Route path="/donate" element={<Donate/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp/>} />
@@ -56,6 +58,9 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/user/request" element={<UserRequest/>} />
         <Route path="/profile" element={<Profile/>} />
+        
+        
+
       </Routes>
       <AuthDetails/>
       <Footer />

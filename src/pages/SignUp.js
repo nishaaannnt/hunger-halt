@@ -27,7 +27,6 @@ const SignUp = () => {
         .then((result)=>{
           console.log(result.user)
           useAppstate.setuserName(result.user.displayName);
-          useAppstate.setLogin(true);
           useAppstate.setPhoto(result.user.photoURL);
           useAppstate.setEmail(result.user.email);
           useAppstate.setsignupType('google');
@@ -40,7 +39,7 @@ const SignUp = () => {
   
     // Normal Email Password login
   
-    const signup=document.querySelector('#signup')
+  const signup=document.querySelector('#signup')
    
 
   const mailLogin=async ()=>{
@@ -53,14 +52,13 @@ const SignUp = () => {
         .then((result)=>{
           console.log(result.user)
           setpwd(pwd);
-          useAppstate.setLogin(true);
           useAppstate.setEmail(result.user.email);
           useAppstate.setsignupType('email');
           setSignup(true);
         })
       }catch(err){
         console.log(err);
-      }
+      } 
     }else{
       // Password do not match
       const noMatch=document.querySelector('.pwdNoMatch')
@@ -85,6 +83,7 @@ const SignUp = () => {
   }
   
 
+  // UI
     return (
         <>
         <div className='flex justify-center  items-center gap-5 w-full h-full '>
@@ -112,6 +111,7 @@ const SignUp = () => {
                 <div onClick={mailLogin} className='w-1/2 m-auto flex justify-center items-center p-4 rounded-2xl gap-8 bg-hung/80 hover:bg-hung/60 transition cursor-pointer drop-shadow-lg my-2'>
                     <p className='text-white'>Sign in</p>
                 </div>
+                <div className='justify-center items-center flex text-hung/60 '><p> Already have an account? <a className='text-hung cursor-pointer' onClick={()=>navigate('/login')}>SignIn here</a></p></div>
             </form>
     
             {/* Horizontal Line */}

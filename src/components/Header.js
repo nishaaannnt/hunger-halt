@@ -1,17 +1,19 @@
 import {React,useContext, useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { Appstate } from '../App'
 import Modal from './Modal';
 
 const Header = () => {
     const useAppstate=useContext(Appstate);
+    const navigate=useNavigate();
 
-    // For Modal
+    // For Modal not
     const [signUpModal,setSignUpModal]=useState(false);
 
 
 
     // Add this to make modal fixed 
+    // FOR MODAL NOT USED 
     const modalOpen=()=>{
         document.body.style.overflow='hidden'
     } 
@@ -21,7 +23,7 @@ const Header = () => {
 
   return (
     <>
-    <header className="sticky top-0 z-50 bg-white/90 drop-shadow-md">
+    <header className="sticky md:visible  top-0 z-50 bg-white/90 drop-shadow-md">
             <nav className="md:flex  p-6 mx-auto justify-between text-hung font text-xl items-center">
                 <h3>Hunger Halt</h3>
                 <ul className="md:flex md:space-x-6 items-center">
@@ -32,10 +34,16 @@ const Header = () => {
 
                     {/* // Conditional rendering if logged in or not // */}
 
-                    {useAppstate.login ?
+                    {useAppstate.login &&
+                    useAppstate.role==='NGO'&&<>
+                    <li><Link to="/donate" className="hover:text-black">Available Volunteer</Link></li>
+                    <li><Link to="/donate" className="hover:text-black">Food</Link></li></>}
+
+                    {useAppstate.login?
                     <>
-                        <li><Link to="#" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Sponsor Us</Link></li>
-                        <div className='flex gap-3 bg-black/40 text-white rounded-lg px-2 items-center'>
+                    
+                        <li><Link to="/donate" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Sponsor Us</Link></li>
+                        <div onClick={()=>navigate('/profile')} className='flex cursor-pointer gap-3 hover:bg-black/30 bg-black/40 text-white rounded-lg px-2 items-center'>
                             <li><p className='py-2'>{useAppstate.userName}</p></li>
                             {/* <li><p className='py-2'>{useAppstate.email}</p></li> */}
                             <li><img src={useAppstate.photo} alt="pfp" className='w-8 rounded-full' /></li>
@@ -54,7 +62,7 @@ const Header = () => {
             </nav>
         </header>
 
-        {/* // MODAL SECTION // */}
+        {/* // MODAL SECTION NOT USED ANYMORE// */}
         {/*
             signInModal?(
                 <Modal onClose={setSignInModal}>

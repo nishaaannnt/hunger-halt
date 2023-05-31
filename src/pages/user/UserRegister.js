@@ -2,20 +2,49 @@ import React, {useState,useContext} from 'react'
 import { Appstate } from '../../App'
 import { loginVector } from '../../assets/images';
 import { useNavigate,Link} from 'react-router-dom'
+import { setDoc,doc,serverTimestamp } from 'firebase/firestore';
+import { db, refer } from '../../firebase/firebase';
 
 const UserRegister = () => {
   const navigate= useNavigate();
   const useAppstate=useContext(Appstate); 
-  
     const [fullName, setFullName] = useState(useAppstate.userName);
     const [email, setEmail] = useState(useAppstate.email);
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
 
-
+  const userReg=document.querySelector('.userRegister')
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Perform registration logic here
+    const user={
+      name:userReg.fullName.value,
+      email:userReg.email.value,
+      address:userReg.address.value,
+      phone:userReg.phone.value
+    }
+    // Insert Code
+    try{
+    setDoc(doc(db,'users',user.email),{
+      fullName:user.name,
+      email:user.email,
+      address:user.address,
+      phone:user.phone,
+      timestamp: serverTimestamp(),
+      userType:'user'
+     }).then(()=>{
+       useAppstate.setuserName(user.name);
+       useAppstate.setEmail(user.email);
+       useAppstate.setAddress(user.address);
+       useAppstate.setContactNo(user.phone);
+       useAppstate.setLogin(true);
+       useAppstate.setAccountCreated(true);
+       userReg.reset();
+       navigate('/')
+  })
+}catch(err){
+  console.log(err);
+}
   };
 
   return (
@@ -25,7 +54,7 @@ const UserRegister = () => {
         </div>
       <div className='w-1/3'>
     <h2 className="text-3xl  py-3 mb-8 text-hung items-center justify-center">User Registration</h2>
-    <form onSubmit={handleFormSubmit} className='mx-auto  mt-8 justify-center items-center'>
+    <form onSubmit={handleFormSubmit} className='userRegister mx-auto  mt-8 justify-center items-center'>
       <label htmlFor="fullName" className="block mb-2">Full Name:</label>
       <input
         type="text"

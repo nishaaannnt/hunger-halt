@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext,useState } from 'react'
 import { email, google, loginVector } from '../assets/images'
 import { googleProvider,auth } from '../firebase/firebase'
-import {signInWithPopup ,signOut,createUserWithEmailAndPassword} from 'firebase/auth'
+import {signInWithPopup,signInWithEmailAndPassword ,signOut} from 'firebase/auth'
 import { Appstate } from '../App'
 import { useNavigate } from 'react-router-dom'
 
@@ -24,8 +24,9 @@ export const Login = () => {
         useAppstate.setuserName(result.user.displayName);
         useAppstate.setEmail(result.user.email);
         useAppstate.setLogin(true);
+        useAppstate.setsignupType('google');
         useAppstate.setPhoto(result.user.photoURL);
-        
+        navigate('/')
       })
     }catch(err){
       console.log(err);
@@ -43,7 +44,7 @@ export const Login = () => {
       const mail=signup.email.value;
       console.log(mail);
     try{
-      createUserWithEmailAndPassword(auth,email,pwd) 
+      signInWithEmailAndPassword(auth, email, pwd)
       .then((result)=>{
         console.log(result.user)
         
@@ -51,18 +52,17 @@ export const Login = () => {
         useAppstate.setLogin(true);
         useAppstate.setPhoto(result.user.photoURL);
         navigate("/register");
-      })
-    }catch(err){
-      console.log(err);
-    }
-  }else{
-    // Password do not match
-    const noMatch=document.querySelector('.pwdNoMatch')
-    noMatch.append('Password not Matched!')
-    setTimeout(() => {
-      noMatch.innerHTML='';
-    }, 3000);
-    
+      }).catch((err)=>{
+        console.log(err);
+        const noMatch=document.querySelector('.pwdNoMatch')
+       noMatch.append('Not valid Credentials')
+       setTimeout(() => {
+         noMatch.innerHTML='';
+       }, 3000);
+         })
+       }catch(err){
+         console.log(err);
+       }
   }
 }
 
@@ -109,6 +109,7 @@ export const Login = () => {
             <div onClick={mailLogin} className='w-1/2 m-auto flex justify-center items-center p-4 rounded-2xl gap-8 bg-hung/80 hover:bg-hung/60 transition cursor-pointer drop-shadow-lg my-2'>
                 <p className='text-white'>Sign in</p>
             </div>
+            <div className='justify-center items-center flex text-hung/60 '><p> Don't have an account? <a className='text-hung cursor-pointer' onClick={()=>navigate('/signup')}> Create one</a></p></div>
         </form>
 
         {/* Horizontal Line */}

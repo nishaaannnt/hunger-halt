@@ -10,9 +10,10 @@ import zeroHunger from './home/zeroHunger.jpg'
 import goodHealth from './home/goodHealth.jpg'
 import volunteer from './home/volunteer.jpg'
 import foodDonate from './home/foodDonate.jpg'
+import profile from './home/profile.jpg'
 import google from './login/google.png'
 import email from './login/email.png'
 import loginVector from './login/loginVector.jpg'
 
 
-export { foodDonate,deliver,vector1,rawFood,edibleFood,donate,money,zeroHunger,goodHealth,happy,ngo,volunteer,google,email,loginVector };
+export { foodDonate,deliver,profile,vector1,rawFood,edibleFood,donate,money,zeroHunger,goodHealth,happy,ngo,volunteer,google,email,loginVector };

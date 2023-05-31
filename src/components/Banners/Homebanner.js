@@ -18,19 +18,19 @@ export const Homebanner = () => {
                 <div className="heading">
                     <h1 className="text-6xl py-3 mb-6 text-hung">United Nation Goals</h1>
                 </div>
-                <div className="goals flex justify-evenly mt-4">
+                <div className="goals md:flex justify-evenly mt-4">
                     <div className="flex flex-col items-center justify-center">
-                        <img src={zeroHunger} className="h-72 mr-8 rounded-3xl" alt="no"/>
+                        <img src={zeroHunger} className="h-72 md:mr-8 rounded-3xl mb-3" alt="no"/>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <img src={goodHealth} className="h-72 ml-8 rounded-3xl" alt="no"/>
+                        <img src={goodHealth} className="h-72 md:ml-8 rounded-3xl" alt="no"/>
                     </div>
                 </div>
             </div>
         </section>
         <section id="volunteer">
             <div className="volunteer flex  justify-center px-12 py-12 items-center h-full">
-                <div className="flex justify-center items-center">
+                <div className="md:flex justify-center items-center">
                     <div className="image  mr-8">
                         <img src={volunteer} className="h-auto" alt=""/>
                     </div>
@@ -53,7 +53,7 @@ export const Homebanner = () => {
                 <div className="heading">
                     <h1 className="text-6xl py-3 mb-6 text-hung">How it Works</h1>
                 </div>
-                <div className="flow flex justify-evenly mt-8">
+                <div className="flow md:flex justify-evenly mt-8">
                     <div className="items-center justify-center flex flex-col">
                         <img src={donate} className="h-48 px-6 py-6" alt=""/>
                         <p className="px-6">Choose what you want to donate</p>

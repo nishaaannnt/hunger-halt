@@ -1,22 +1,58 @@
-import React, {useState} from 'react'
+import React, {useState,useContext} from 'react';
+import { useNavigate,Link} from 'react-router-dom';
+import { Appstate } from '../../App';
 import { loginVector } from '../../assets/images';
+import { setDoc,doc,serverTimestamp } from 'firebase/firestore';
+import { db} from '../../firebase/firebase';
 
 const NgoRegister = () => {
 
+  const navigate= useNavigate();
+  const useAppstate=useContext(Appstate); 
+
   const [fullName, setFullName] = useState('');
   const [contactPerson, setContactPerson] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [cpassword, setcPassword] = useState('');
+  const [email, setEmail] = useState(useAppstate.email);
   const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
-  const [age, setAge] = useState('');
-  const [userType, setUserType] = useState('provider'); // Default user type
+  const [address, setAddress] = useState('');// Default user type
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Perform registration logic here
-  };
+    // Insert Data
+    const ngoReg=document.querySelector('.ngoReg');
+
+    const user={
+      orgname:ngoReg.orgName.value,
+      cname:ngoReg.contactName.value,
+      email:ngoReg.email.value,
+      address:ngoReg.address.value,
+      phone:ngoReg.phone.value
+    }
+    try{
+    setDoc(doc(db,'users',user.email),{
+      displayName:user.orgname,
+      contactPerson:user.cname,
+      email:user.email,
+      address:user.address,
+      phone:user.phone,
+      timestamp: serverTimestamp(),
+      userType:'NGO'
+     }).then(()=>{
+       useAppstate.setuserName(user.orgname);
+       useAppstate.setEmail(user.email);
+       useAppstate.setcperson(user.cname);
+       useAppstate.setAddress(user.address);
+       useAppstate.setContactNo(user.phone);
+       useAppstate.setLogin(true);
+      //  useAppstate.setAccountCreated(true);
+       ngoReg.reset();
+       navigate('/')
+  })
+}catch(err){
+  console.log(err);
+}
+}
 
     //UI of NGO registration   
 
@@ -27,11 +63,11 @@ const NgoRegister = () => {
         </div>
       <div className='w-1/3'>
     <h2 className="text-3xl  py-3 mb-8 text-hung items-center justify-center">NGO Registration</h2>
-    <form onSubmit={handleFormSubmit} className='mx-auto  mt-8 justify-center items-center'>
-      <label htmlFor="fullName" className="block mb-2">Organization Name:</label>
+    <form onSubmit={handleFormSubmit} className='ngoReg mx-auto  mt-8 justify-center items-center'>
+      <label htmlFor="orgName" className="block mb-2">Organization Name:</label>
       <input
         type="text"
-        id="fullName"
+        id="orgName"
         value={fullName}
         onChange={(e) => setFullName(e.target.value)}
         placeholder='Eg. Khush Bharat Pratibha'
@@ -39,11 +75,11 @@ const NgoRegister = () => {
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       />
 
-    <label htmlFor="fullName" className="block mb-2">Contact Person Name:</label>
+    <label htmlFor="contactName" className="block mb-2">Contact Person Name:</label>
       <input
         type="text"
-        id="fullName"
-        value={fullName}
+        id="contactName"
+        
         onChange={(e) => setContactPerson(e.target.value)}
         placeholder='Eg. Sundar Pichai'
         required
@@ -57,28 +93,6 @@ const NgoRegister = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder='Enter Your organization email'
-        required
-        className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
-      />
-
-      <label htmlFor="password" className="block mb-2">Password:</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder='Enter Your Password'
-        required
-        className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
-      />
-
-    <label htmlFor="cpassword" className="block mb-2">Confirm Password:</label>
-      <input
-        type="cpassword"
-        id="cpassword"
-        value={cpassword}
-        onChange={(e) => setcPassword(e.target.value)}
-        placeholder='Confirm Your Password'
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       />
@@ -116,4 +130,4 @@ const NgoRegister = () => {
   )
 }
 
-export default NgoRegister
+export default NgoRegister;

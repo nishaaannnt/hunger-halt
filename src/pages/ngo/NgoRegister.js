@@ -9,7 +9,6 @@ const NgoRegister = () => {
 
   const navigate= useNavigate();
   const useAppstate=useContext(Appstate); 
-
   const [fullName, setFullName] = useState('');
   const [contactPerson, setContactPerson] = useState('');
   const [email, setEmail] = useState(useAppstate.email);

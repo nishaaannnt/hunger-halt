@@ -13,7 +13,8 @@ import About from "./pages/About"
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import UserRequest from "./pages/user/UserRequest";
-import { Home2 } from "./pages/Home2";
+import { DonateMoney } from "./pages/DonateMoney";
+import NgoFood from "./pages/ngo/NgoFood";
 
 
 // This is secondary important
@@ -27,7 +28,6 @@ function App() {
   const [email,setEmail]=useState('');
   const [photo,setPhoto]=useState('');
   const [login,setLogin]=useState(false);
-  const [accountCreated,setAccountCreated]=useState(false);
   const [signupType,setsignupType]=useState('');
   const [cperson,setcperson]=useState();
 
@@ -49,12 +49,13 @@ function App() {
           exact path="/" element={<> <Home /></>}
         />
         <Route path="/volunteer" element={<Volunteer/>} />
-        <Route path="/home2" element={<Home2/>} />
+        <Route path="/DonateMoney" element={<DonateMoney/>} />
         <Route path="/donate" element={<Donate/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/user/register" element={<UserRegister/>} />
         <Route path="/ngo/register" element={<NgoRegister/>} />
+        <Route path="/ngo/food" element={<NgoFood/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/user/request" element={<UserRequest/>} />
         <Route path="/profile" element={<Profile/>} />

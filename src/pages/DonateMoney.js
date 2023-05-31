@@ -2,7 +2,7 @@ import React from 'react'
 import { qrCode } from '../assets/images'
 
 
-export const Home2 = () => {
+export const DonateMoney = () => {
   return (
     <>
     

@@ -40,7 +40,7 @@ const Header = () => {
                     {useAppstate.login?
                     <>
                     
-                        <li><Link to="/donate" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Sponsor Us</Link></li>
+                        <li><Link to="/donate/money" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Sponsor Us</Link></li>
                         <div onClick={()=>navigate('/profile')} className='flex cursor-pointer gap-3 hover:bg-black/30 bg-black/40 text-white rounded-lg px-2 items-center'>
                             <li><p className='py-2'>{useAppstate.userName}</p></li>
                             {/* <li><p className='py-2'>{useAppstate.email}</p></li> */}

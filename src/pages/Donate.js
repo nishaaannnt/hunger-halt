@@ -59,7 +59,7 @@ const Donate = () => {
 
     <div className="home-content flex justify-center px-12 py-12 items-center h-full">
         <div className="home flex justify-center items-center mt-8 mb-8 h-3/4 w-4/5">
-        <Card title='Donate Money' img={money}/>
+        <Card title='Donate Money' img={money} tow='/donate/money'/>
             <div className="desc w-3/4 px-6 flex jusrofy-center flex-col ml-6">
                 <h1 className="text-6xl  py-3 mb-8 text-hung ">
                 Sponsor Us

@@ -49,7 +49,7 @@ function App() {
           exact path="/" element={<> <Home /></>}
         />
         <Route path="/volunteer" element={<Volunteer/>} />
-        <Route path="/DonateMoney" element={<DonateMoney/>} />
+        <Route path="/donate/money" element={<DonateMoney/>} />
         <Route path="/donate" element={<Donate/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp/>} />

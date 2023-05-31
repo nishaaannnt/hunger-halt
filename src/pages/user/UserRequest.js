@@ -1,6 +1,6 @@
 import React, { useState,useContext } from 'react';
 import { Appstate } from '../../App'
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc,serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 import { loginVector, vector1 } from '../../assets/images';
 
@@ -35,7 +35,9 @@ const UserRequest = () => {
             },
             foodType,
             quantity,
-            email:docId, // Include the user's email
+            email:docId,
+            status:'new',
+            timestamp: serverTimestamp() // Include the user's email
           },
           { merge: true }
         ).then(()=>{reqForm.reset()

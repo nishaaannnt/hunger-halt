@@ -13,6 +13,7 @@ import About from "./pages/About"
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import UserRequest from "./pages/user/UserRequest";
+import NgoFood from "./pages/ngo/NgoFood";
 
 
 // This is secondary important
@@ -26,7 +27,6 @@ function App() {
   const [email,setEmail]=useState('');
   const [photo,setPhoto]=useState('');
   const [login,setLogin]=useState(false);
-  const [accountCreated,setAccountCreated]=useState(false);
   const [signupType,setsignupType]=useState('');
   const [cperson,setcperson]=useState();
 
@@ -53,6 +53,7 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/user/register" element={<UserRegister/>} />
         <Route path="/ngo/register" element={<NgoRegister/>} />
+        <Route path="/ngo/food" element={<NgoFood/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/user/request" element={<UserRequest/>} />
         <Route path="/profile" element={<Profile/>} />

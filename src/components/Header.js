@@ -10,8 +10,6 @@ const Header = () => {
     // For Modal not
     const [signUpModal,setSignUpModal]=useState(false);
 
-
-
     // Add this to make modal fixed 
     // FOR MODAL NOT USED 
     const modalOpen=()=>{
@@ -32,12 +30,12 @@ const Header = () => {
                     <li><Link to="/donate" className="hover:text-black">Donate</Link></li>
                     <li><Link to="/about" className="hover:text-black">About</Link></li>
 
-                    {/* // Conditional rendering if logged in or not // */}
+                    {/* // Conditional rendering if NGO or NOT// */}
 
                     {useAppstate.login &&
                     useAppstate.role==='NGO'&&<>
                     <li><Link to="/donate" className="hover:text-black">Available Volunteer</Link></li>
-                    <li><Link to="/donate" className="hover:text-black">Food</Link></li></>}
+                    <li><Link to="/ngo/food" className="hover:text-black">Food</Link></li></>}
 
                     {useAppstate.login?
                     <>

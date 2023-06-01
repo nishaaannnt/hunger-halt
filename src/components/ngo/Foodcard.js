@@ -3,6 +3,14 @@ import React from 'react'
 
 // This card is used to display food request
 const Foodcard = (props) => {
+
+  const googleMap=()=>{
+      const address = props.address
+      const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${address}`;
+
+      window.location.href = googleMapsUrl;
+  }
+
   return (
     <div className="h-90 rounded-2xl md:w-1/2 md:mx-auto mb-16 bg-white/10 p-6 m-4 mx-4   justify-between flex flex-col  shadow-2xl">
         <div className='md:flex justify-between p-6 '>
@@ -19,7 +27,7 @@ const Foodcard = (props) => {
             </div>
             <div className='flex mx-4 gap-2 md:justify-between'>
                 <a className="bg-hung py-4 px-12  cursor-pointer rounded-2xl w-1/2   text-center hover:bg-emerald-900 transition text-white">Accept</a>
-                <a className="bg-hung py-4 px-12  cursor-pointer rounded-2xl md:w-1/5 w-1/2   text-center hover:bg-emerald-900 transition text-white ">Map</a>
+                <a onClick={googleMap} target='_top' className="bg-hung py-4 px-12  cursor-pointer rounded-2xl md:w-1/5 w-1/2   text-center hover:bg-emerald-900 transition text-white ">Map</a>
             </div>
     </div>
   )

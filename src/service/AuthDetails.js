@@ -1,4 +1,4 @@
-import React,{useContext,useEffect} from 'react'
+import {useContext,useEffect} from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth, db } from '../firebase/firebase'
 import { Appstate } from '../App'

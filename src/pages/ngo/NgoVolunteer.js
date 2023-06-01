@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { collection, query, where, getDocs } from "firebase/firestore";
 import {db} from '../../firebase/firebase'
-import Foodcard from '../../components/ngo/Foodcard';
 import VolunteerCard from '../../components/ngo/VolunteerCard';
 
 const NgoVolunteer = () => {

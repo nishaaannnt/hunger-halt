@@ -1,9 +1,9 @@
 import React, {useState,useContext} from 'react'
 import { Appstate } from '../../App'
 import { loginVector } from '../../assets/images';
-import { useNavigate,Link} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import { setDoc,doc,serverTimestamp } from 'firebase/firestore';
-import { db, refer } from '../../firebase/firebase';
+import { db } from '../../firebase/firebase';
 
 const UserRegister = () => {
   const navigate= useNavigate();
@@ -38,7 +38,7 @@ const UserRegister = () => {
        useAppstate.setAddress(user.address);
        useAppstate.setContactNo(user.phone);
        useAppstate.setLogin(true);
-       useAppstate.setAccountCreated(true);
+      //  useAppstate.setAccountCreated(true);
        userReg.reset();
        navigate('/')
   })

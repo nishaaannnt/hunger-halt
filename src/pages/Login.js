@@ -80,29 +80,29 @@ export const Login = () => {
 
 // Login UI 
   return (
-    <div className='flex justify-center items-center gap-5 w-full h-full '>
-      <div className='w-1/2'>
+    <div className='md:flex justify-center items-center gap-5 md:w-full h-full '>
+      <div className='md:w-1/2 md:block hidden'>
           <img src={loginVector} alt="" />
         </div>
         
         {/* Conditional rendering for login */}
 
       {useAppstate.login?
-      <div onClick={logOut} className='w-auto flex items-center p-4 mb-24 rounded-2xl gap-8 bg-hung/30 hover:bg-white transition cursor-pointer drop-shadow-lg '>
+      <div onClick={logOut} className='md:w-auto flex items-center p-4 mb-24 rounded-2xl gap-8 bg-hung/30 hover:bg-white transition cursor-pointer drop-shadow-lg '>
       <p>Log Out</p>
       </div>
-      :<div className='w-1/2 justify-center flex flex-col'>
+      :<div className='md:w-1/2 justify-center flex flex-col'>
 
         {/* Login Form for user */}
         <form action="" id='signup'>
-            <div className=' w-1/2 m-auto'>
+            <div className=' w-1/2 m-auto text-center'>
             <h2 class="text-5xl py-3 mb-8 text-hung items-center justify-center">Login</h2>
-                <label for="email" className="block mb-3">Email:</label>
+                <label for="email" className="block mb-3 md:text-left">Email:</label>
                 <input type="email" name="email" onChange={(e)=>{setemail(e.target.value)}} placeholder='Enter Your Name' required 
-                 className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
+                 className="w-full border border-hung/40 rounded-2xl md:px-3 px-6 py-2 mb-4"/><br/>
 
-                <label for="password" className="block mb-3">Password:</label>
-                <input type="password" id="password" name="password" onChange={(e)=>{setpwd(e.target.value)}} placeholder='Enter Your Password' required  className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
+                <label for="password" className="block mb-3 md:text-left">Password:</label>
+                <input type="password" id="password" name="password" onChange={(e)=>{setpwd(e.target.value)}} placeholder='Enter Your Password' required  className="w-full border border-hung/40 rounded-2xl px-3   py-2 mb-4"/><br/>
 
             </div>
             <div className='pwdNoMatch justify-center items-center flex text-red-700 '></div>
@@ -120,8 +120,8 @@ export const Login = () => {
         <hr className="justify-center flex items-center w-1/4 drop  my-5 " /></div>
 
         {/* Google Login Option */}
-        <div onClick={googleLogin} className='w-1/2 m-auto flex items-center p-4 rounded-2xl gap-8 bg-hung/40 hover:bg-white transition cursor-pointer drop-shadow-lg '>
-            <img src={google} className='w-10' alt="" />
+        <div onClick={googleLogin} className='md:w-1/2 m-auto flex items-center p-4 rounded-2xl gap-8 bg-hung/40 hover:bg-white transition cursor-pointer drop-shadow-lg '>
+            <img src={google} className='md:w-10 w-8' alt="" />
             <p>Sign in with google</p>
         </div></div> 
 }

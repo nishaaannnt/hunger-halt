@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <>
     <header className="sticky md:visible  top-0 z-50 bg-white/90 drop-shadow-md">
-            <nav className="flex  p-6 mx-auto  justify-between text-hung font text-xl items-center">
+            <nav className="flex  p-6 mx-auto  text-center justify-between text-hung font text-xl items-center">
                 <h3 className='text-3xl md:text-right mb-4 md:mb-0'>Hunger Halt</h3>
                 <span className='my-4 font-bold md:hidden ' onClick={()=>Menu()}>X</span>
                 <ul className="md:flex md:space-x-6 items-center z-[-1] md:z-auto absolute md:static bg-white w-full left-0 md:w-auto pl-3 md:pl-0 md:opacity-100 opacity-0 top-[-400px] transition-all  duration-300">
@@ -50,7 +50,7 @@ const Header = () => {
                     <>
                     
                         <li className='my-4 md:m-0'><Link to="/donate/money" className="bg-hung text-white p-2 rounded-lg hover:bg-emerald-700">Sponsor Us</Link></li>
-                        <div onClick={()=>navigate('/profile')} className='flex 
+                        <div onClick={()=>navigate('/profile') } className='flex mx-auto justify-between
                         my-4 md:my-0 cursor-pointer gap-3 hover:bg-black/30 bg-black/40 text-white rounded-lg px-2 
                         w-56 md:w-auto items-center'>
                             <li><p className='py-2'>{useAppstate.userName}</p></li>

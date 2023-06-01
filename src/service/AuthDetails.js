@@ -40,7 +40,7 @@ const useAppstate=useContext(Appstate);
         if(user.userType==='NGO'){
           useAppstate.setcperson(user.contactPerson);
           useAppstate.setuserName(user.displayName);
-        }else if(user.userType==='user'){
+        }else if(user.userType==='user' ||user.userType==='volunteer'){
           useAppstate.setuserName(user.fullName);
         }else{
           useAppstate.setuserName('Anonymous')

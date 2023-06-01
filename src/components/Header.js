@@ -34,7 +34,7 @@ const Header = () => {
 
                     {useAppstate.login &&
                     useAppstate.role==='NGO'&&<>
-                    <li><Link to="/donate" className="hover:text-black">Available Volunteer</Link></li>
+                    <li><Link to="/ngo/volunteer" className="hover:text-black">Available Volunteer</Link></li>
                     <li><Link to="/ngo/food" className="hover:text-black">Food</Link></li></>}
                     <li><Link to="/about" className="hover:text-black">About</Link></li>
 

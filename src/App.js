@@ -15,6 +15,7 @@ import Profile from "./pages/Profile";
 import UserRequest from "./pages/user/UserRequest";
 import { DonateMoney } from "./pages/DonateMoney";
 import NgoFood from "./pages/ngo/NgoFood";
+import NgoVolunteer from "./pages/ngo/NgoVolunteer";
 
 
 // This is secondary important
@@ -55,6 +56,7 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/user/register" element={<UserRegister/>} />
         <Route path="/ngo/register" element={<NgoRegister/>} />
+        <Route path="/ngo/volunteer" element={<NgoVolunteer/>} />
         <Route path="/ngo/food" element={<NgoFood/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/user/request" element={<UserRequest/>} />

@@ -28,10 +28,7 @@ const Volunteer = () => {
         <div>
             <img src={volunteer} alt="vol" className='mr-10' />
         </div>
-        {
-            useAppstate.login?
-        <VolunteerForm/>:<h1 class="text-6xl py-3 mb-6 text-hung">Login to be a Volunteer :)</h1>
-        }
+        <VolunteerForm/>
     </div>
 
 

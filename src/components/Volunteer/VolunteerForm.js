@@ -1,30 +1,80 @@
-import React from 'react'
+import React, { useState,useContext } from 'react';
+import { Appstate } from '../../App'
+import { doc, setDoc,serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase/firebase';
 
 const VolunteerForm = () => {
+
+  const useAppstate=useContext(Appstate);
+  const volForm=document.querySelector('.volForm');
+  const [timeslot,setTimeslot]=useState();
+  const [day,setDay]=useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log(day,timeslot)
+    try {
+      // Get the current logged-in user
+      if (useAppstate.login) {
+
+        // Set the document ID as the user's UID
+
+        const docId = useAppstate.email;
+        // Use the set() method with merge: true to update the document
+
+        await setDoc(doc(db,'users',docId),
+          { volDay:day,
+            timeSlot:timeslot,
+            userType:'volunteer',
+            status:'free',
+            voltimestamp: serverTimestamp() // Include the user's email
+          },
+          { merge: true }
+        ).then(()=>{volForm.reset() });
+        const done=document.querySelector('.done')
+        done.append('Your Volunteering details is submitted!')
+        setTimeout(() => {
+        done.innerHTML='';
+        }, 3000);
+      } else {
+        // User is not logged in
+        
+        const issue=document.querySelector('.issue')
+        issue.append('Please Login to continue !')
+        setTimeout(() => {
+        issue.innerHTML='';
+        }, 3000);
+      }
+    } catch (error) {
+      console.error('Error submitting request:', error);
+      alert('An error occurred while submitting the request. Please try again.');
+    }
+  };
+
   return (
     <div className='w-1/2 ml-8'>
         <h2 class="text-5xl py-3 mb-8 text-hung items-center justify-center">Volunteer Application Form</h2>
-        <form action="/submit_volunteer_application" method="POST" class=" mx-auto mt-8 justify-center items-center">
-            <label for="full_name" class="block mb-2">Full Name:</label>
-            <input type="text" id="full_name" name="full_name" placeholder='Enter Your Name' required class="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
-
-            <label for="email" class="block mb-2">Email:</label>
-            <input type="email" id="email" name="email" placeholder='Enter Your Email' required class="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
-
-            <label for="phone" class="block mb-2">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder='Enter Your Phone Number' required class="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
-
-            <label for="age" class="block mb-2">Age:</label>
-            <input type="number" id="age" name="age" placeholder='Enter Your Age' required class="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
+        <form onSubmit={handleSubmit} class="volForm flex-col flex mx-auto mt-8">
 
             <label for="availability" class="block mb-2">Availability:</label>
-            <textarea id="availability" name="availability" placeholder='Enter Your Availability' required class="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"></textarea><br/>
+            <input placeholder="e.g., 4:00pm to 8:00pm" onChange={(e) => setTimeslot(e.target.value)}
+            pattern="\d{1,2}:\d{2}(am|pm)\sto\s\d{1,2}:\d{2}(am|pm)" id="availability" name="availability"  required class="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"></input><br/>
 
-            <label for="experience" class="block mb-2">Relevant Experience:</label>
-            <textarea id="experience" name="experience" placeholder='Enter Your Experience' required class="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"></textarea><br/>
-            
-
-            <input type="submit" value="Submit Application" class="bg-hung hover:bg-hung/60 cursor-pointer text-white font-bold py-2 px-4 rounded-xl mt-4"/>
+            <label for="volunteering" class="block mb-2">Day for volunteering</label>
+            <select className=' border border-hung/40 rounded-2xl px-3 py-2 mb-4' onChange={(e) => setDay(e.target.value)}>
+              <option value="">--Select Day--</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+              <option value="sunday">Sunday</option>
+            </select>
+            <div className='issue text-xl mt-2 justify-center items-center flex text-red-500 '></div>
+      <     div className='done text-xl mt-2 justify-center items-center flex text-green-600 '></div>
+            <input type="submit"  value="Submit Application" class="bg-hung hover:bg-hung/60 cursor-pointer text-white font-bold py-2 px-4 rounded-xl mt-4"/>
         </form>
         </div>
   )

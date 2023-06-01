@@ -28,10 +28,14 @@ const Volunteer = () => {
         <div>
             <img src={volunteer} alt="vol" className='md:mr-10  h-80' />
         </div>
+<<<<<<< HEAD
         {
             useAppstate.login?
         <VolunteerForm/>:<h1 class="md:text-6xl text-4xl py-3 mb-6  text-hung">Login to be a Volunteer :)</h1>
         }
+=======
+        <VolunteerForm/>
+>>>>>>> 217d0c806f246142f0f80f9de3fd786c5cfcb20a
     </div>
 
 

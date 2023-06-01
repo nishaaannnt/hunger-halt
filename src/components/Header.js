@@ -24,19 +24,20 @@ const Header = () => {
     <header className="sticky md:visible  top-0 z-50 bg-white/90 drop-shadow-md">
             <nav className="md:flex  p-6 mx-auto justify-between text-hung font text-xl items-center">
                 <h3>Hunger Halt</h3>
-                <ul className="md:flex md:space-x-6 items-center">
-                    <li><Link to="/" className="hover:text-black">Home</Link></li>
-                    <li><Link to="/volunteer" className="hover:text-black">Volunteer</Link></li>
-                    <li><Link to="/donate" className="hover:text-black">Donate</Link></li>
+                <div className="">
+                <ul className="md:flex md:space-x-6 items-center pt-8 ">
+                    <li><Link to="/" className="hover:text-black py-8">Home</Link></li>
+                    <li><Link to="/volunteer" className="hover:text-black pt-">Volunteer</Link></li>
+                    <li><Link to="/donate" className="hover:text-black pt-">Donate</Link></li>
                     
 
                     {/* // Conditional rendering if NGO or NOT// */}
 
                     {useAppstate.login &&
                     useAppstate.role==='NGO'&&<>
-                    <li><Link to="/donate" className="hover:text-black">Available Volunteer</Link></li>
-                    <li><Link to="/ngo/food" className="hover:text-black">Food</Link></li></>}
-                    <li><Link to="/about" className="hover:text-black">About</Link></li>
+                    <li><Link to="/donate" className="hover:text-black pt-">Available Volunteer</Link></li>
+                    <li><Link to="/ngo/food" className="hover:text-black pt-">Food</Link></li></>}
+                    <li><Link to="/about" className="hover:text-black pt-">About</Link></li>
 
                     {useAppstate.login?
                     <>
@@ -53,11 +54,12 @@ const Header = () => {
                     <>
                     {/* Login is same for both NGO and User as only single Dataset of Users */}
                     
-                    <li><Link to={'/login'} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">Login</Link></li>
-                    <li><Link to={'/signup'} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700">SignUp</Link></li>
+                    <li><Link to={'/login'} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700 pt-">Login</Link></li>
+                    <li><Link to={'/signup'} className="bg-hung cursor-pointer text-white p-2 px-3 rounded-lg hover:bg-emerald-700  pt-">SignUp</Link></li>
                     </>
                     }
                 </ul>
+                </div>
             </nav>
         </header>
 

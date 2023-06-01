@@ -86,26 +86,26 @@ const SignUp = () => {
   // UI
     return (
         <>
-        <div className='flex justify-center  items-center gap-5 w-full h-full '>
-          <div className='w-1/2'>
+        <div className='md:flex justify-center  items-center gap-5 w-full h-full '>
+          <div className='md:w-1/2 md:block hidden'>
               <img src={loginVector} alt="" />
             </div>
             
             {/* Conditional rendering for login */}
     
             {/* Login Form for user */}
-            <div className='w-1/2 justify-center flex flex-col'>    
+            <div className='md:w-1/2 justify-center md:flex md:flex-col text-center'>    
             <form action="" id='signup'>
-                <div className=' w-1/2 m-auto'>
-                <h2 class="text-5xl py-3 mb-8 text-hung items-center justify-center">Signup</h2>
-                    <label for="email" className="block mb-3">Email:</label>
+                <div className=' md:w-1/2  m-auto '>
+                <h2 class="text-5xl py-3 mb-8  text-hung items-center justify-center">Signup</h2>
+                    <label for="email" className="block mb-3 md:text-left ">Email:</label>
                     <input type="email" name="email" onChange={(e)=>{setemail(e.target.value)}} placeholder='Enter Your Name' required 
-                     className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
+                     className="md:w-full border border-hung/40 rounded-2xl md:px-3 px-9 py-2 mb-4"/><br/>
     
-                    <label for="password" className="block mb-3">Password:</label>
-                    <input type="password" id="password" name="password" onChange={(e)=>{setpwd(e.target.value)}} placeholder='Enter Your Password' required  className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
-                    <label for="cpassword" className="block mb-3">Confirm Password:</label>
-                    <input type="password" id="cpassword" name="cpassword" onChange={(e)=>{setcpwd(e.target.value)}} placeholder='Confirm Your password' required className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
+                    <label for="password" className="block mb-3 md:text-left">Password:</label>
+                    <input type="password" id="password" name="password" onChange={(e)=>{setpwd(e.target.value)}} placeholder='Enter Your Password' required  className="md:w-full border border-hung/40 rounded-2xl md:px-3 px-10 py-2 mb-4"/><br/>
+                    <label for="cpassword" className="block mb-3 md:text-left">Confirm Password:</label>
+                    <input type="password" id="cpassword" name="cpassword" onChange={(e)=>{setcpwd(e.target.value)}} placeholder='Confirm Your password' required className="md:w-full border border-hung/40 rounded-2xl md:px-3 px-10 py-2 mb-4"/><br/>
                 </div>
                 <div className='pwdNoMatch justify-center items-center flex text-red-700 '></div>
                 <div onClick={mailLogin} className='w-1/2 m-auto flex justify-center items-center p-4 rounded-2xl gap-8 bg-hung/80 hover:bg-hung/60 transition cursor-pointer drop-shadow-lg my-2'>
@@ -122,8 +122,8 @@ const SignUp = () => {
             <hr className="justify-center flex items-center w-1/4 drop  my-5 " /></div>
     
             {/* Google Login Option */}
-            <div onClick={googleLogin} className='w-1/2 m-auto flex items-center p-4 rounded-2xl gap-8 bg-hung/40 hover:bg-white transition cursor-pointer drop-shadow-lg '>
-                <img src={google} className='w-10' alt="" />
+            <div onClick={googleLogin} className='w-1/2 m-auto flex items-center md:p-4 p-3 rounded-2xl gap-8 bg-hung/40 hover:bg-white transition cursor-pointer drop-shadow-lg '>
+                <img src={google} className='md:w-10 w-7' alt="" />
                 <p>Sign in with google</p>
             </div>
             </div>

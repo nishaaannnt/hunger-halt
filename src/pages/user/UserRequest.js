@@ -103,6 +103,7 @@ const UserRequest = () => {
         </label>
         <input
           type="text"
+          pattern="[0-9]{10}"
           placeholder='Enter your contact number'
           required
           id="contactNo"

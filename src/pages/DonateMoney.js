@@ -6,7 +6,7 @@ export const DonateMoney = () => {
   return (
     <>
     
-    <div className="home-content flex flex-col justify-center md:px-12 py-12 items-center h-full">
+    <div className="home-content flex flex-col justify-center md:px-12 py-4 md:py-12 items-center h-full">
         <div className="home  md:flex md:justify-between mt-8 mb-8 h-3/4 md:w-4/5">
             <div className="desc  w-auto  md:w-3/4 px-6 md:m-auto mb-8 ">
                 <h1 className="text-6xl py-3 mb-6 text-hung">

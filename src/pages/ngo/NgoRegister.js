@@ -92,6 +92,7 @@ const NgoRegister = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder='Enter Your organization email'
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
         required
         className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"
       />
@@ -101,6 +102,7 @@ const NgoRegister = () => {
         type="tel"
         id="phone"
         value={phone}
+        pattern="[0-9]{10}"
         onChange={(e) => setPhone(e.target.value)}
         placeholder='Enter Your '
         required

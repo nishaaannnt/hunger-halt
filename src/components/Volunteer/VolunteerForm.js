@@ -22,11 +22,17 @@ const VolunteerForm = () => {
 
         const docId = useAppstate.email;
         // Use the set() method with merge: true to update the document
+        let userType;
+        if(useAppstate.role=='NGO'){
+          userType='NGO'
+        }else{
+          userType='volunteer'
+        }
 
         await setDoc(doc(db,'users',docId),
           { volDay:day,
             timeSlot:timeslot,
-            userType:'volunteer',
+            userType,
             status:'free',
             voltimestamp: serverTimestamp() // Include the user's email
           },

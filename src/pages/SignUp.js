@@ -99,11 +99,11 @@ const SignUp = () => {
                 <div className=' md:w-1/2 md:m-auto my-6'>
                 <h2 class="text-5xl py-3 mb-8 text-hung items-center justify-center">Signup</h2>
                     <label for="email" className="block mb-3">Email:</label>
-                    <input type="email" name="email" onChange={(e)=>{setemail(e.target.value)}} placeholder='Enter Your Name' required 
+                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" name="email" onChange={(e)=>{setemail(e.target.value)}} placeholder='Enter Your Name' required 
                      className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
     
                     <label for="password" className="block mb-3">Password:</label>
-                    <input type="password" id="password" name="password" onChange={(e)=>{setpwd(e.target.value)}} placeholder='Enter Your Password' required  className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
+                    <input type="password" id="password" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onChange={(e)=>{setpwd(e.target.value)}} placeholder='Enter Your Password' required  className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
                     <label for="cpassword" className="block mb-3">Confirm Password:</label>
                     <input type="password" id="cpassword" name="cpassword" onChange={(e)=>{setcpwd(e.target.value)}} placeholder='Confirm Your password' required className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
                 </div>

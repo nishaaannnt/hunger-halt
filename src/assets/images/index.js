@@ -15,6 +15,7 @@ import google from './login/google.png'
 import email from './login/email.png'
 import loginVector from './login/loginVector.jpg'
 import qrCode from './home/qrCode.png'
+import about from './home/about.jpg'
 
 
-export { foodDonate,deliver,profile,vector1,rawFood,edibleFood,donate,money,zeroHunger,goodHealth,happy,ngo,volunteer,google,email,loginVector,qrCode };
+export { about,foodDonate,deliver,profile,vector1,rawFood,edibleFood,donate,money,zeroHunger,goodHealth,happy,ngo,volunteer,google,email,loginVector,qrCode };

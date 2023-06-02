@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { volunteer,money,rawFood,edibleFood} from '../assets/images/index'
+import { volunteer,money,rawFood,edibleFood, vector1} from '../assets/images/index'
 import VolunteerForm from '../components/Volunteer/VolunteerForm';
 import { Appstate } from '../App';
 import { Card } from '../components/Card';
@@ -27,7 +27,7 @@ const Volunteer = () => {
    
     <div class="volunteer md:flex md:justify-center md:px-12 md:py-12  md:items-center md:h-full md:mb-16  max-w-fit md:ml-36">
         <div className='md:block hidden'>
-            <img src={volunteer} alt="vol" className='md:mr-10  h-90' />
+            <img src={vector1} alt="vol" className='md:mr-10  h-96' />
         </div>
         {
             useAppstate.login?

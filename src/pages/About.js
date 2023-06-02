@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImage from "../pages/about.jpg";
+import { about } from "../assets/images";
 import { donate, ngo, deliver, happy } from "../assets/images";
 
 const About = () => {
@@ -8,7 +8,7 @@ const About = () => {
       {/*image of abous us*/}
       <div class="p-10 hidden md:block">
         <div class="relative ">
-          <img src={AboutImage} className="w-full " />
+          <img src={about} className="w-full rounded-2xl" />
           <h1 class="absolute text-5xl font-pop text-white top-16 left-1/2 -translate-x-1/2 -translate-y-1/3 ">
             HUNGER HALT
           </h1>
@@ -114,33 +114,6 @@ const About = () => {
             </div>
         </section>
 
-        {/*another section*/}
-        <div className="pt-40 md:block hidden">
-          <div className="bg-white py-6 flex flex-row shadow-2xl  ">
-            <div className=" flex flex-col text-left w-3/4">
-              <p className="text-4xl font-semibold text-hung px-36 py-3">
-                Together we end hunger
-              </p>
-              <p className="px-36 py-3 text-lg">
-                {" "}
-                "In a world where hunger persists, let's sow seeds of change
-                through compassion, kindness, and unwavering determination.
-                Together, we can cultivate a future where every plate is filled,
-                every stomach nourished, and every heart empowered to thrive."
-              </p>
-            </div>
-            <div className="w-1/2 bg-hung/20 justify-evenly rounded-2xl px-7 py-3 mr-6">
-              <p className="text-5xl font-semibold">Join our community</p>
-              <p className="py-5 w-96">
-                Get the latest conversation updates, be inspired to takw action
-                , see more ways to get involved
-              </p>
-              <button class="border-2 border-black text-black bg-transparent py-2 px-4 rounded-lg font-semibold shadow-lg">
-                Signup for email 〉
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

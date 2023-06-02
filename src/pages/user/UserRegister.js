@@ -70,6 +70,7 @@ const UserRegister = () => {
         type="email"
         id="email"
         value={email}
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
         onChange={(e) => setEmail(e.target.value)}
         placeholder='Enter Your '
         required
@@ -81,6 +82,7 @@ const UserRegister = () => {
         type="tel"
         id="phone"
         value={phone}
+        pattern="[0-9]{10}"
         onChange={(e) => setPhone(e.target.value)}
         placeholder='Enter Your '
         required

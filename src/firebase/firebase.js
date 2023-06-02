@@ -6,15 +6,14 @@ import {
 } from 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyALuvTmI_B42ltwTVRLe1JpLf5cqeCFdfc",
-    authDomain: "hunger-halt.firebaseapp.com",
-    projectId: "hunger-halt",
-    storageBucket: "hunger-halt.appspot.com",
-    messagingSenderId: "321787485158",
-    appId: "1:321787485158:web:f609b97bd4496047051427",
-    measurementId: "G-R7ZBMRW41D"
-  };
-  
+  apiKey: "AIzaSyBWba1eFv5DhIf1bWG0Xlm6zcZFN0bEqA8",
+  authDomain: "hunger-halt-2.firebaseapp.com",
+  projectId: "hunger-halt-2",
+  storageBucket: "hunger-halt-2.appspot.com",
+  messagingSenderId: "1055001047770",
+  appId: "1:1055001047770:web:7bc833aaccdfff1065abe3",
+  measurementId: "G-VZ600BQP9N"
+};
   const app=initializeApp(firebaseConfig);
   export const db=getFirestore();
   export const refer= collection(db,'users')

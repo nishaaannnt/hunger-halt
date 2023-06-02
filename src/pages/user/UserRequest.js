@@ -37,6 +37,8 @@ const UserRequest = () => {
             quantity,
             email:docId,
             status:'new',
+            acceptedBy:'',
+            acceptedById:'',
             timestamp: serverTimestamp() // Include the user's email
           },
           { merge: true }
@@ -59,7 +61,7 @@ const UserRequest = () => {
         // User is not logged in
         
         const issue=document.querySelector('.issue')
-        issue.append('Please Login to continue')
+        issue.append('Please Login to submit Request!')
         setTimeout(() => {
         issue.innerHTML='';
         }, 3000);

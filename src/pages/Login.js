@@ -51,7 +51,7 @@ export const Login = () => {
         useAppstate.setuserName(result.user.displayName);
         useAppstate.setLogin(true);
         useAppstate.setPhoto(result.user.photoURL);
-        navigate("/register");
+        navigate("/");
       }).catch((err)=>{
         console.log(err);
         const noMatch=document.querySelector('.pwdNoMatch')
@@ -81,7 +81,7 @@ export const Login = () => {
 // Login UI 
   return (
     <div className='flex justify-center items-center gap-5 w-full h-full '>
-      <div className='w-1/2'>
+      <div className='w-1/2 md:block hidden'>
           <img src={loginVector} alt="" />
         </div>
         
@@ -91,11 +91,11 @@ export const Login = () => {
       <div onClick={logOut} className='w-auto flex items-center p-4 mb-24 rounded-2xl gap-8 bg-hung/30 hover:bg-white transition cursor-pointer drop-shadow-lg '>
       <p>Log Out</p>
       </div>
-      :<div className='w-1/2 justify-center flex flex-col'>
+      :<div className='md:w-1/2 my-4 justify-center flex flex-col'>
 
         {/* Login Form for user */}
         <form action="" id='signup'>
-            <div className=' w-1/2 m-auto'>
+            <div className=' md:w-1/2 m-auto'>
             <h2 class="text-5xl py-3 mb-8 text-hung items-center justify-center">Login</h2>
                 <label for="email" className="block mb-3">Email:</label>
                 <input type="email" name="email" onChange={(e)=>{setemail(e.target.value)}} placeholder='Enter Your Name' required 
@@ -106,7 +106,7 @@ export const Login = () => {
 
             </div>
             <div className='pwdNoMatch justify-center items-center flex text-red-700 '></div>
-            <div onClick={mailLogin} className='w-1/2 m-auto flex justify-center items-center p-4 rounded-2xl gap-8 bg-hung/80 hover:bg-hung/60 transition cursor-pointer drop-shadow-lg my-2'>
+            <div onClick={mailLogin} className='md:w-1/2 m-auto flex justify-center items-center p-4 rounded-2xl gap-8 bg-hung/80 hover:bg-hung/60 transition cursor-pointer drop-shadow-lg my-2'>
                 <p className='text-white'>Sign in</p>
             </div>
             <div className='justify-center items-center flex text-hung/60 '><p> Don't have an account? <a className='text-hung cursor-pointer' onClick={()=>navigate('/signup')}> Create one</a></p></div>
@@ -120,7 +120,7 @@ export const Login = () => {
         <hr className="justify-center flex items-center w-1/4 drop  my-5 " /></div>
 
         {/* Google Login Option */}
-        <div onClick={googleLogin} className='w-1/2 m-auto flex items-center p-4 rounded-2xl gap-8 bg-hung/40 hover:bg-white transition cursor-pointer drop-shadow-lg '>
+        <div onClick={googleLogin} className='md:w-1/2 m-auto flex items-center p-4 rounded-2xl gap-8 bg-hung/40 hover:bg-white transition cursor-pointer drop-shadow-lg '>
             <img src={google} className='w-10' alt="" />
             <p>Sign in with google</p>
         </div></div> 

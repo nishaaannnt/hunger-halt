@@ -87,16 +87,16 @@ const SignUp = () => {
     return (
         <>
         <div className='flex justify-center  items-center gap-5 w-full h-full '>
-          <div className='w-1/2'>
+          <div className='md:w-1/2 md:block hidden'>
               <img src={loginVector} alt="" />
             </div>
             
             {/* Conditional rendering for login */}
     
             {/* Login Form for user */}
-            <div className='w-1/2 justify-center flex flex-col'>    
+            <div className='md:w-1/2 justify-center flex flex-col'>    
             <form action="" id='signup'>
-                <div className=' w-1/2 m-auto'>
+                <div className=' md:w-1/2 md:m-auto my-6'>
                 <h2 class="text-5xl py-3 mb-8 text-hung items-center justify-center">Signup</h2>
                     <label for="email" className="block mb-3">Email:</label>
                     <input type="email" name="email" onChange={(e)=>{setemail(e.target.value)}} placeholder='Enter Your Name' required 
@@ -108,10 +108,10 @@ const SignUp = () => {
                     <input type="password" id="cpassword" name="cpassword" onChange={(e)=>{setcpwd(e.target.value)}} placeholder='Confirm Your password' required className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
                 </div>
                 <div className='pwdNoMatch justify-center items-center flex text-red-700 '></div>
-                <div onClick={mailLogin} className='w-1/2 m-auto flex justify-center items-center p-4 rounded-2xl gap-8 bg-hung/80 hover:bg-hung/60 transition cursor-pointer drop-shadow-lg my-2'>
-                    <p className='text-white'>Sign in</p>
+                <div onClick={mailLogin} className='md:w-1/2 m-auto flex justify-center items-center p-4 rounded-2xl gap-8 bg-hung/80 hover:bg-hung/60 transition cursor-pointer drop-shadow-lg my-2'>
+                    <p className='text-white'>Sign Up</p>
                 </div>
-                <div className='justify-center items-center flex text-hung/60 '><p> Already have an account? <a className='text-hung cursor-pointer' onClick={()=>navigate('/login')}>SignIn here</a></p></div>
+                <div className='justify-center items-center flex text-hung/60 mt-4'><p> Already have an account? <a className='text-hung cursor-pointer' onClick={()=>navigate('/login')}>SignIn here</a></p></div>
             </form>
     
             {/* Horizontal Line */}
@@ -122,7 +122,7 @@ const SignUp = () => {
             <hr className="justify-center flex items-center w-1/4 drop  my-5 " /></div>
     
             {/* Google Login Option */}
-            <div onClick={googleLogin} className='w-1/2 m-auto flex items-center p-4 rounded-2xl gap-8 bg-hung/40 hover:bg-white transition cursor-pointer drop-shadow-lg '>
+            <div onClick={googleLogin} className='md:w-1/2 m-auto flex items-center p-4 rounded-2xl gap-8 bg-hung/40 hover:bg-white transition cursor-pointer drop-shadow-lg '>
                 <img src={google} className='w-10' alt="" />
                 <p>Sign in with google</p>
             </div>

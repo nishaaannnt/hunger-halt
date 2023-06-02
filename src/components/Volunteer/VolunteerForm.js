@@ -53,9 +53,9 @@ const VolunteerForm = () => {
   };
 
   return (
-    <div className='w-1/2 ml-8'>
-        <h2 class="text-5xl py-3 mb-8 text-hung items-center justify-center">Volunteer Application Form</h2>
-        <form onSubmit={handleSubmit} class="volForm flex-col flex mx-auto mt-8">
+    <div className='md:w-1/2 md:ml-16 mx-8 '>
+        <h2 class="md:text-5xl text-3xl py-3 mb-8 text-hung ">Volunteer Application Form</h2>
+        <form onSubmit={handleSubmit} class="volForm flex-col flex mt-8">
 
             <label for="availability" class="block mb-2">Availability:</label>
             <input placeholder="e.g., 4:00pm to 8:00pm" onChange={(e) => setTimeslot(e.target.value)}

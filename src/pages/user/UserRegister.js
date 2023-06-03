@@ -50,10 +50,10 @@ const UserRegister = () => {
 
   return (
     <div className='w-full flex gap-5 m-auto justify-center my-16'>
-      <div className='w-1/2'>
+      <div className='hidden md:block w-1/2'>
           <img src={loginVector} alt="" />
         </div>
-      <div className='w-1/3'>
+      <div className='md:w-1/3'>
     <h2 className="text-3xl  py-3 mb-8 text-hung items-center justify-center">User Registration</h2>
     <form onSubmit={handleFormSubmit} className='userRegister mx-auto  mt-8 justify-center items-center'>
       <label htmlFor="fullName" className="block mb-2">Full Name:</label>

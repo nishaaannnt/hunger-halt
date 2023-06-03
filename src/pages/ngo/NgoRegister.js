@@ -57,10 +57,10 @@ const NgoRegister = () => {
 
   return (
     <div className='w-full flex gap-5 m-auto justify-center my-8'>
-      <div className='w-1/2'>
+      <div className='md:block hidden w-1/2'>
           <img src={loginVector} alt="" />
         </div>
-      <div className='w-1/3'>
+      <div className='md:w-1/3'>
     <h2 className="text-3xl  py-3 mb-8 text-hung items-center justify-center">NGO Registration</h2>
     <form onSubmit={handleFormSubmit} className='ngoReg mx-auto  mt-8 justify-center items-center'>
       <label htmlFor="orgName" className="block mb-2">Organization Name:</label>

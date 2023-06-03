@@ -122,7 +122,7 @@ const Profile = () => {
                <p className='text-black/50 flex items-center gap-2 my-1'><FaPhoneAlt/> {useAppstate.contact}</p>
                <p className='text-black/70 flex items-center gap-2 text-lg mb-1'><FaMapMarkerAlt/>{useAppstate.address}</p>
                {useAppstate.cperson&&useAppstate.role=='NGO' ? (
-                 <p className='text-black/70 text-lg mb-1'>{useAppstate.cperson}</p>
+                 <p className='text-black/70 text-lg mb-1'><FaUsers/>{useAppstate.cperson}</p>
                ) : (
                  <></>
                )}

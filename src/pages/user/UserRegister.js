@@ -5,6 +5,8 @@ import { useNavigate} from 'react-router-dom'
 import { setDoc,doc,serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 
+// Register User
+
 const UserRegister = () => {
   const navigate= useNavigate();
   const useAppstate=useContext(Appstate); 

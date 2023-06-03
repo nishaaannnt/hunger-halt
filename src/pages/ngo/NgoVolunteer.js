@@ -5,6 +5,7 @@ import { db } from '../../firebase/firebase';
 import VolunteerCard from '../../components/ngo/VolunteerCard';
 import { vector1 } from '../../assets/images';
 
+// Page for NGO to view available Volunteers
 
 const NgoVolunteer = () => {
   const [volunteers, setVolunteers] = useState([]);

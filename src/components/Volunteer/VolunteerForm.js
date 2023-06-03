@@ -3,6 +3,8 @@ import { Appstate } from '../../App'
 import { doc, setDoc,serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 
+// Form for user to apply for volunteering
+
 const VolunteerForm = () => {
 
   const useAppstate=useContext(Appstate);
@@ -17,11 +19,7 @@ const VolunteerForm = () => {
     try {
       // Get the current logged-in user
       if (useAppstate.login) {
-
-        // Set the document ID as the user's UID
-
         const docId = useAppstate.email;
-        // Use the set() method with merge: true to update the document
         let userType;
         if(useAppstate.role=='NGO'){
           userType='NGO'

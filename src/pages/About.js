@@ -6,10 +6,10 @@ const About = () => {
   return (
     <div>
       {/*image of abous us*/}
-      <div class="p-10 hidden md:block">
-        <div class="relative ">
+      <div className="p-10 hidden md:block">
+        <div className="relative ">
           <img src={about} className="w-full rounded-2xl" />
-          <h1 class="absolute text-5xl font-pop text-white top-16 left-1/2 -translate-x-1/2 -translate-y-1/3 ">
+          <h1 className="absolute text-5xl font-pop text-white top-16 left-1/2 -translate-x-1/2 -translate-y-1/3 ">
             HUNGER HALT
           </h1>
           <p className="absolute  text-2xl text-white left-1/2 -translate-x-1/2 bottom-14 px-3  font-brad ">
@@ -27,35 +27,35 @@ const About = () => {
                 "Hunger Halt: Uniting Against Hunger"
               </h1>
             </div>
-            <div class="aspect-w-16 aspect-h-9   md:px-11  py-4 md:pt-16">
+            <div className="aspect-w-16 aspect-h-9   md:px-11  py-4 md:pt-16">
               <iframe
                 src="https://www.youtube.com/embed/00dPKd1gu0Q"
                 className="rounded-3xl shadow-2xl mx-auto h-[10rem] md:h-[38rem] md:w-[60rem]"
                 itle="YouTube video player"
-                frameborder="0"
+                
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
           </div>
         </div>
       </div>
       {/*-card-*/}
-      <div class="volunteer flex  justify-center md:px-36 px-8 py-12 items-center h-full mb-16">
-        <div class="md:flex justify-center items-center">
-          <div class="desc md:w-1/2 md:mr-9">
-            <h1 class="md:text-6xl text-3xl py-3 mb-6 text-hung text-center">Who Are we?</h1>
-            <p class="text-lg mb-8">
+      <div className="volunteer flex  justify-center md:px-36 px-8 py-12 items-center h-full mb-16">
+        <div className="md:flex justify-center items-center">
+          <div className="desc md:w-1/2 md:mr-9">
+            <h1 className="md:text-6xl text-3xl py-3 mb-6 text-hung text-center">Who Are we?</h1>
+            <p className="text-lg mb-8">
               "We are a passionate team dedicated to addressing food waste and
               hunger. Through our platform, we connect users with NGOs and
               retreat centers, providing reliable food sources and contributing
               to a world with zero hunger."
             </p>
           </div>
-          <div class="image  ml-8">
+          <div className="image  ml-8">
             <img
               src="https://media.istockphoto.com/id/1347280753/vector/feeding-homeless-people-concept.jpg?s=612x612&w=0&k=20&c=VurxbK_wC-Mjvzu1WroQd6GdA9cE8KmJcUZ34zwmrac="
-              class="h-560"
+              className="h-560"
               alt=""
             />
           </div>

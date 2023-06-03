@@ -1,8 +1,10 @@
 import { initializeApp} from 'firebase/app';
 import { getAuth,GoogleAuthProvider} from 'firebase/auth';
+
+// This page is for Firebase connectivity
+
 import {
-  getFirestore,collection, onSnapshot,
-  addDoc,deleteDoc,doc
+  getFirestore,collection
 } from 'firebase/firestore'
 
 const firebaseConfig = {

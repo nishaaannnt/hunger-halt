@@ -8,6 +8,7 @@ import { Appstate } from '../../App';
 import { updateDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 
+// Display Food Information Card
 
 const Foodcard = (props) => {
   const useAppstate = useContext(Appstate);

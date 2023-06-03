@@ -1,9 +1,11 @@
 import React, {useState,useContext} from 'react';
-import { useNavigate,Link} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { Appstate } from '../../App';
 import { loginVector } from '../../assets/images';
 import { setDoc,doc,serverTimestamp } from 'firebase/firestore';
 import { db} from '../../firebase/firebase';
+
+//Register NGO here 
 
 const NgoRegister = () => {
 
@@ -17,8 +19,6 @@ const NgoRegister = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Perform registration logic here
-    // Insert Data
     const ngoReg=document.querySelector('.ngoReg');
 
     const user={

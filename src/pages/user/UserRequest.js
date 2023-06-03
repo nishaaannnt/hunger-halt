@@ -4,6 +4,7 @@ import { doc, setDoc,serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 import { loginVector, vector1 } from '../../assets/images';
 
+// User to avail food request form
 
 const UserRequest = () => {
   const [address, setAddress] = useState('');

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext,useState } from 'react'
-import { email, google, loginVector } from '../assets/images'
+import { google, loginVector } from '../assets/images'
 import { googleProvider,auth } from '../firebase/firebase'
 import {signInWithPopup,signInWithEmailAndPassword ,signOut} from 'firebase/auth'
 import { Appstate } from '../App'
@@ -96,12 +96,12 @@ export const Login = () => {
         {/* Login Form for user */}
         <form action="" id='signup'>
             <div className=' md:w-1/2 m-auto'>
-            <h2 class="text-5xl py-3 mb-8 text-hung items-center justify-center">Login</h2>
-                <label for="email" className="block mb-3">Email:</label>
+            <h2 className="text-5xl py-3 mb-8 text-hung items-center justify-center">Login</h2>
+                <label htmlFor="email" className="block mb-3">Email:</label>
                 <input type="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" onChange={(e)=>{setemail(e.target.value)}} placeholder='Enter Your Name' required 
                  className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
 
-                <label for="password" className="block mb-3">Password:</label>
+                <label htmlFor="password" className="block mb-3">Password:</label>
                 <input type="password" id="password" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onChange={(e)=>{setpwd(e.target.value)}} placeholder='Enter Your Password' required  className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
 
             </div>

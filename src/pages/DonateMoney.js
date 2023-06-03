@@ -15,8 +15,6 @@ export const DonateMoney = () => {
                 <p className="mr-6 text-lg mb-8">
                 Countless lives are lost daily on unforgiving streets, their hunger and despair echoing. Your donation rescues them, offering food, shelter, and hope. Join the cause, make a difference,Donate ! Be kind.
                 </p>
-                <a href="#" className="bg-hung text-white px-6 py-2 rounded-lg hover:bg-emerald-700 mt-4 ">Donate
-                    Us</a>
             </div>
             <div className="carousel max-h-96 md:w-1/3 flex justify-center items-center">
                 <img src={qrCode} className="md:h-full h-96 " alt="img" />

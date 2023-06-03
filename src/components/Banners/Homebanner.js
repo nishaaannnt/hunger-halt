@@ -40,7 +40,7 @@ export const Homebanner = () => {
                             Around one-third of food produced for human consumption is wasted
                             annually, while an estimated 690 million people suffer from hunger
                             daily. These problems are interlinked and require a comprehensive
-                            approach.
+                            approach.Help deliver food and make a difference today!
                         </p>
                         <a href="#" onClick={handleVolunteer}
                             className="bg-hung text-white px-6  py-2 rounded-lg hover:bg-emerald-700 mt-4 transition">Volunteer</a>
@@ -65,7 +65,7 @@ export const Homebanner = () => {
                     </div>
                     <div className="items-center justify-center flex flex-col">
                         <img src={deliver} className="h-48 md:px-6 py-6" alt=""/>
-                        <p className="md:px-6">Either you or we can deliver your food </p>
+                        <p className="md:px-6">We can help deliver your food </p>
                     </div>
                     <div className="items-center justify-center flex flex-col">
                         <img src={happy} className="h-48 md:px-6 py-6" alt=""/>

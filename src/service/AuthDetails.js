@@ -52,24 +52,12 @@ const useAppstate=useContext(Appstate);
         }else{
           useAppstate.setPhoto(profile)
         }
-
-        console.log(useAppstate.contact)
-        console.log(user)
+              
         }else{
-          console.log('Error boi')
+          alert('Some error Occured')
         }
-
-     
-
-      useAppstate.setEmail(auth.currentUser.email)
-      console.log(useAppstate.signupType)
- 
-
-     
+      useAppstate.setEmail(auth.currentUser.email)     
       }
-    
-
-      // if(auth.currentUser.displayName){
       
       )
     }

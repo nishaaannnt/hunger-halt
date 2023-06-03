@@ -15,8 +15,6 @@ const Header = () => {
     const [signUpModal,setSignUpModal]=useState(false);
     const [nav,setNav]=useState(true);
 
-    // Add this to make modal fixed 
-    // FOR MODAL NOT USED 
     const Menu=()=>{
         const list=document.querySelector('ul');
         const navResIcon=document.querySelector('#navResIcon');

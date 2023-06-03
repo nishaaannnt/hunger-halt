@@ -34,7 +34,7 @@ export const Footer = () => {
                     <hr className="md:w-80"/>
                     <p className="md:my-3 mt-6">Solution Challenge 2023</p>
                     <p className="py-1">Team Hunger Halt</p>
-                    <p className="md:mt-4 md:flex items-center gap-2"><AiFillGithub className='hidden md:block'/><a href="" className="text-white/60"> Click here</a> for Github Code</p>
+                    <p className="md:mt-4 md:flex items-center gap-2"><AiFillGithub className='hidden md:block'/><a href="https://github.com/nishaaannnt/hunger-halt" className="text-white/60"> Click here</a> for Github Code</p>
                     </div>
                 </div>
 

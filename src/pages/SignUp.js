@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext,useState } from 'react'
-import { email, google, loginVector } from '../assets/images'
+import { google, loginVector } from '../assets/images'
 import { googleProvider,auth } from '../firebase/firebase'
 import {signInWithPopup ,signOut,createUserWithEmailAndPassword} from 'firebase/auth'
 import { Appstate } from '../App'

@@ -1,12 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { FaUserAlt,FaPhoneAlt,FaClock,FaCalendarAlt, FaCheck } from "react-icons/fa";
 import { AiFillMail } from "react-icons/ai";
-
-
 import { Appstate } from '../../App';
 import { updateDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 
+// Display free volunteer details
 
 const VolunteerCard = (props) => {
   const useAppstate = useContext(Appstate);
@@ -27,7 +26,6 @@ const VolunteerCard = (props) => {
 
 
       setAccepted(true);
-      // Perform any additional actions after accepting the request
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +58,7 @@ const VolunteerCard = (props) => {
           }`}
           onClick={handleAccept}
         >
-          {accepted ?<><FaCheck/> Accepted </>: 'Accept'}
+          {accepted ?<div className='flex items-center justify-center gap-4'><FaCheck/> Accepted </div>: 'Accept'}
         </a>
       </div>
     </div>

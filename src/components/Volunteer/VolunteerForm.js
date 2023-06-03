@@ -14,8 +14,6 @@ const VolunteerForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log(day,timeslot)
     try {
       // Get the current logged-in user
       if (useAppstate.login) {

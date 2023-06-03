@@ -57,7 +57,11 @@ const SignUp = () => {
           setSignup(true);
         })
       }catch(err){
-        console.log(err);
+        const noMatch=document.querySelector('.pwdNoMatch')
+        noMatch.append('Email Already in use!')
+       setTimeout(() => {
+        noMatch.innerHTML='';
+      }, 3000);
       } 
     }else{
       // Password do not match
@@ -99,7 +103,7 @@ const SignUp = () => {
                 <div className=' md:w-1/2 md:m-auto my-6'>
                 <h2 class="text-5xl py-3 mb-8 text-hung items-center justify-center">Signup</h2>
                     <label for="email" className="block mb-3">Email:</label>
-                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" name="email" onChange={(e)=>{setemail(e.target.value)}} placeholder='Enter Your Name' required 
+                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" name="email" onChange={(e)=>{setemail(e.target.value)}} placeholder='Enter Your Email' required 
                      className="w-full border border-hung/40 rounded-2xl px-3 py-2 mb-4"/><br/>
     
                     <label for="password" className="block mb-3">Password:</label>

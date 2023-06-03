@@ -54,7 +54,7 @@ const useAppstate=useContext(Appstate);
         }
               
         }else{
-          alert('Some error Occured')
+          console.log('From authDetails else  ')
         }
       useAppstate.setEmail(auth.currentUser.email)     
       }

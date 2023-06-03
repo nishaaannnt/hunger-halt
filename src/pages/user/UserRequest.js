@@ -81,7 +81,7 @@ const UserRequest = () => {
         <div className="md:block hidden w-1/2 justify-center items-center">
                 <img src={loginVector} className="md:" alt="img" />
         </div>
-    <div className=' mx-auto md:w-1/3 my-6'>
+    <div className=' mx-8 md:mx-auto md:w-1/3 my-6'>
       <h2 className="text-5xl py-3 text-hung ">Food Request Form</h2>
       <form onSubmit={handleFormSubmit} className="reqForm mx-auto mt-8 justify-center items-center">
         <label htmlFor="address" className="block mb-2">

@@ -69,7 +69,7 @@ const NgoFood = () => {
                 </div>
               ))
             ) : (
-              <div  className='md:p-48 w-full'><h1 className='text-center md:text-4xl text-2xl text-hung/80 '>No available food suppliers found.</h1></div>
+              <div  className='md:p-48 md:mt-0 mt-12 w-full'><h1 className='text-center md:text-4xl text-2xl text-hung/80 '>No available food suppliers found.</h1></div>
             )}
           </div>
         )}

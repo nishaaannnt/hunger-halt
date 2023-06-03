@@ -52,7 +52,7 @@ const Profile = () => {
 
   const renderActivities = async () => {
     const activityPromises = activities.map(async (item, index) => {
-       const { email, timestamp, acceptedById,status,foodType,quantity} = item;
+       const { email, timestamp, acceptedById,foodType,quantity} = item;
        let contact,contactNo;
       if(useAppstate.role=='user'){
          contact=item.provider.contactName;
@@ -60,18 +60,17 @@ const Profile = () => {
       }
        const ngoDetails = await fetchNGODetails(acceptedById);
       return (
-        <div key={index} className='text-2xl  text-hung'>
+        <div key={index} className='md:text-2xl text-lg text-hung'>
         <p className='flex items-center gap-2 my-1'><AiFillMail/> {email}</p>
         <p className='flex items-center gap-2 my-1'><FaClock/> {timestamp && timestamp.toDate().toLocaleString()}</p>
         {
         useAppstate.role=='user'?<>
         <p className='flex items-center gap-2 my-1'><FaUserAlt/> <span className='text-black/40'> Provider :</span> {contact}</p>
         <p className='flex items-center gap-2 my-1'><FaPhoneAlt/> {contactNo}</p>
-        <p className='flex items-center gap-2 my-1'><span className='text-black/40'>Status:</span> {status}</p>
         <p className='flex items-center gap-2 my-1'><FaUtensils/> {foodType}</p>
-        <p className='flex items-center gap-2 my-1'><FaUsers/> {quantity}</p></>:<></>
+        <p className='flex items-center gap-2 my-1 mb-8'><FaUsers/> {quantity}</p></>:<></>
         }
-        <p className='flex items-center gap-2 my-1'><FaCheck/> <span className='text-black/40'> Accepted by :</span> {acceptedById?ngoDetails.displayName:'Not accepted yet'}</p>  
+        <p className='flex items-center  gap-2 my-1'><FaCheck/> <span className='text-black/40'> Accepted by :</span> {acceptedById?ngoDetails.displayName:'Not accepted yet'}</p>  
         {ngoDetails&&(useAppstate.role=='user'||useAppstate.role=='volunteer') ? (
           <div>
             <p className='flex items-center gap-2 my-1 mt-6 text-black/50 mb-2'>More NGO Details :</p>
@@ -82,7 +81,7 @@ const Profile = () => {
             {/* Display other NGO details here */}
           </div>
         ) : (
-          <p>NGO Details Not Found</p>
+          <p></p>
         )}
       </div>
       );

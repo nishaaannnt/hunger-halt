@@ -1,0 +1,44 @@
+[debug] [2023-06-03T07:59:12.380Z] ----------------------------------------------------------------------
+[debug] [2023-06-03T07:59:12.383Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nd221\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-06-03T07:59:12.384Z] CLI Version:   12.3.0
+[debug] [2023-06-03T07:59:12.385Z] Platform:      win32
+[debug] [2023-06-03T07:59:12.385Z] Node Version:  v18.16.0
+[debug] [2023-06-03T07:59:12.386Z] Time:          Sat Jun 03 2023 13:29:12 GMT+0530 (India Standard Time)
+[debug] [2023-06-03T07:59:12.387Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-03T07:59:12.510Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-03T07:59:12.511Z] > authorizing via signed-in user (nd221619@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  B:\A Final Solution\HungerHalt\hunger-halt
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-06-03T07:59:25.000Z] Using project from CLI flag: hunger-halt
+[debug] [2023-06-03T07:59:25.006Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/hunger-halt [none]
+[debug] [2023-06-03T07:59:25.487Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/hunger-halt 200
+[debug] [2023-06-03T07:59:25.487Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/hunger-halt {"projectId":"hunger-halt","projectNumber":"321787485158","displayName":"Hunger-Halt","name":"projects/hunger-halt","resources":{"hostingSite":"hunger-halt","realtimeDatabaseInstance":"hunger-halt-default-rtdb"},"state":"ACTIVE","etag":"1_fe8c7634-8a5b-48de-bf2e-5bcb8427f5aa"}
+[info] i  Using project hunger-halt (Hunger-Halt) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

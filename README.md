@@ -80,10 +80,10 @@ Hunger Halt Video : https://youtu.be/EQqf-oyWLzk
 
 4. Use of google maps will enable NGO's to track the providers efficiently.
 
+<br>
+<h2>Google Technologies Used</h2>
 
-<h2>Google Technologies</h2>
-
-<div class="flex mx-auto">
+<div class="flex ">
   
 <img src="https://i.pcmag.com/imagery/reviews/02yVL9f8Jw1atwoG6sgFZDH-7.fit_scale.size_760x427.v1569482492.jpg" alt="Image" width="230">
 
@@ -95,7 +95,7 @@ Hunger Halt Video : https://youtu.be/EQqf-oyWLzk
   
 </div>
 
-
+<br>
 
 <h2>How to Setup</h2>
 

@@ -83,15 +83,15 @@ Hunger Halt Video : https://youtu.be/EQqf-oyWLzk
 
 <h2>Google Technologies</h2>
 
-<div class="flex">
+<div class="flex mx-auto">
   
-<img src="https://i.pcmag.com/imagery/reviews/02yVL9f8Jw1atwoG6sgFZDH-7.fit_scale.size_760x427.v1569482492.jpg" alt="Image" width="250" height="200">
+<img src="https://i.pcmag.com/imagery/reviews/02yVL9f8Jw1atwoG6sgFZDH-7.fit_scale.size_760x427.v1569482492.jpg" alt="Image" width="230">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Firebase_Logo.svg/2560px-Firebase_Logo.svg.png" alt="Image" width="250" height="200">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Firebase_Logo.svg/2560px-Firebase_Logo.svg.png" alt="Image" width="230" >
 
-<img src="https://www.howtogeek.com/wp-content/uploads/2021/06/google_maps_featured_hero_1200.jpg?height=200p&trim=2,2,2,2" alt="Image" width="250" height="200">
+<img src="https://www.howtogeek.com/wp-content/uploads/2021/06/google_maps_featured_hero_1200.jpg?height=200p&trim=2,2,2,2" alt="Image" width="230">
 
-<img src="https://miro.medium.com/v2/resize:fit:1358/1*a2Da_CQHUsSKTCTRI2tYhQ.png" alt="Image" width="250" height="200">
+<img src="https://miro.medium.com/v2/resize:fit:1358/1*a2Da_CQHUsSKTCTRI2tYhQ.png" alt="Image" width="230">
   
 </div>
 

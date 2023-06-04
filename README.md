@@ -28,7 +28,7 @@ Our goals include providing reliable and sustainable food sources to those in ne
 
 <h2>Sustainable Development Goals</h2>
 
-To contribute to the Sustainable Development Goals, Hunger Halt aligns with Zero Hunger and Good heatlh and well being. By reducing food waste and ensuring surplus food reaches those in need, our project addresses the global challenge of hunger and promotes sustainable practices in food consumption.
+To contribute to the Sustainable Development Goals, Hunger Halt aligns with "Zero Hunger" and "Good heatlh and well being". By reducing food waste and ensuring surplus food reaches those in need, our project addresses the global challenge of hunger and promotes sustainable practices in food consumption.
 
 ![Image](Images/goals.png)
 
@@ -65,7 +65,7 @@ To contribute to the Sustainable Development Goals, Hunger Halt aligns with Zero
 <h2>Project Portals</h2>
 Hunger Halt Website - https://hunger-halt.web.app/  
 <br>
-Hunger Halt - Solution Challenge 2023 Project : https://youtu.be/EQqf-oyWLzk
+Hunger Halt Video : https://youtu.be/EQqf-oyWLzk
 
 
 <h2>Key features</h2>
